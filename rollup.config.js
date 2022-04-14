@@ -10,6 +10,7 @@ import posthtml from 'posthtml';
 import { hash } from 'posthtml-hash';
 import rimraf from 'rimraf';
 import preprocess from 'svelte-preprocess';
+import commonjs from '@rollup/plugin-commonjs';
 
 const PROD = !process.env.ROLLUP_WATCH;
 const OUT_DIR = 'build';
@@ -34,6 +35,7 @@ export default {
         file: `${OUT_DIR}/bundle.[hash].js`,
     },
     plugins: [
+        commonjs(),
         copy({ targets: [{ src: 'public/*', dest: OUT_DIR }] }),
         svelte({
             compilerOptions: {
