@@ -31,10 +31,14 @@
         }
     });
 
+    let scrollY;
+
     const unsubscribe = isToggled.subscribe(() => {});
 
     onDestroy(unsubscribe);
 </script>
+
+<svelte:window bind:scrollY />
 
 <!-- <Loader /> -->
 
@@ -51,6 +55,20 @@
     {#if !$isToggled}
         <Router {routes} />
     {/if}
+
+    <div
+        class="back-to-top"
+        class:show-top-btn={scrollY > 750 ? true : false}
+        on:click={() => {
+            scrollY = 0;
+        }}
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+            <path
+                d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
+            />
+        </svg>
+    </div>
 </div>
 
 <style lang="scss">
@@ -91,5 +109,36 @@
         }
     }
 
-    //END ROTATE PHONE//
+    //BACK TO TOP//
+
+    .back-to-top {
+        opacity: 0;
+        cursor: pointer;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        aspect-ratio: 1;
+        background-color: var(--clr-primery-700);
+        border-radius: 50%;
+        bottom: 2rem;
+        right: 1rem;
+        transform: translateY(200%);
+        transition: transform 300ms 100ms ease, opacity 300ms 50ms ease;
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+        path {
+            fill: var(--clr-primery-100);
+        }
+    }
+
+    .show-top-btn {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
 </style>

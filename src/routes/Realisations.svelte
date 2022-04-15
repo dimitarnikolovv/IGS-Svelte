@@ -4,5 +4,18 @@
 </script>
 
 <Main>
-    <Section title="Realisations Page" />
+    <Section carousel={true}>
+        <h3>Work in <span>progress</span></h3>
+        <p>coming soon</p>
+        <p>coming soon</p>
+    </Section>
+    <Section type="work" />
+    <Section carousel={true} />
+    <Section type="work" />
+    <Section carousel={true} />
+    <Section type="work" />
+    <Section carousel={true} />
+    <Section type="work" />
+    <Section carousel={true} />
+    <Section type="work" />
 </Main>

@@ -7,22 +7,52 @@
     onMount(() => {
         AOS.init();
     });
-    export let title = '';
+
     export let type = '';
+    export let carousel = false;
+    export let image = '';
 </script>
 
 {#if type === ''}
     <section>
         <div class="section-wrapper">
-            <div class="section-background background-expanded-" data-carousel>
-                <div class="section-background--reversed" />
+            <div class="section-background">
+                {#if carousel}
+                    <div class="carousel">
+                        <img src="./images/covers/who_we_are_1.webp" alt="" class="image-cover" />
+                        <div class="carousel--badge">
+                            <div class="carousel--badge--background" />
+                            <div class="carousel--badge--content">
+                                <h4>See More</h4>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                >
+                                    <path
+                                        d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                {:else}
+                    <div
+                        class="section-background--image"
+                        style="background-image: url({image});"
+                    />
+                {/if}
             </div>
             <div class="section-container">
-                <h3>{title}</h3>
-                <p class="content">par</p>
-                <p class="content">par</p>
+                <slot />
             </div>
         </div>
+    </section>
+{/if}
+
+{#if type === 'blank'}
+    <section>
+        <slot />
     </section>
 {/if}
 
@@ -62,11 +92,11 @@
     section {
         position: relative;
         width: 90vw;
-        min-height: calc(100vh - 7rem);
-        max-height: 80vh;
+        height: calc(100vh - 5rem);
+        max-height: 90vh;
         background-color: var(--clr-primery-700);
         overflow: hidden;
-        margin-block: 4rem;
+        margin-block: 3rem;
         margin-inline: auto;
 
         .section-wrapper {
@@ -76,26 +106,29 @@
 
             .section-background {
                 width: 54vw;
-                height: calc(100vh - 7rem);
+                height: calc(100vh - 5rem);
                 background-color: transparent;
                 transform: skew(-27deg) translateX(-32%);
                 box-shadow: 0 -2px 10px 6px rgba(0, 0, 0, 0.664);
                 overflow: hidden;
-
-                &--reversed {
-                    height: 100%;
-                    transform: skew(27deg) translateX(32%);
+                @media only screen and (max-width: 1000px) {
+                    width: 65vw;
                 }
 
                 &--image {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    transform: skew(27deg) translateX(32%);
                     transition: transform 300ms ease;
                     will-change: contents;
-                    img {
-                        width: 120%;
-                    }
+
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
 
                     &:hover {
-                        transform: scale(1.03);
+                        transform: scale(1.03) skew(27deg) translateX(32%);
                     }
                 }
             }
@@ -109,36 +142,6 @@
                 flex-direction: column;
                 align-items: flex-end;
                 justify-content: center;
-                .content {
-                    margin-block-start: 3rem;
-                }
-                h3 {
-                    text-align: right;
-                }
-            }
-        }
-
-        &.reversed {
-            .section-background {
-                transform: skew(27deg) translateX(-32%);
-
-                &--reversed {
-                    transform: skew(-27deg) translateX(25%);
-                }
-            }
-        }
-        &#main {
-            margin: 0;
-        }
-
-        &#team {
-            .image-container {
-                width: 100%;
-                height: 100%;
-
-                img {
-                    width: 100%;
-                }
             }
         }
 
@@ -170,13 +173,17 @@
 
                 .section-background {
                     width: 100%;
-                    height: 30vh;
+                    height: 50vh;
                     transform: skew(0) translateX(0);
                     box-shadow: 0 -2px 10px 6px rgba(0, 0, 0, 0.664);
                     margin-block-end: 2vh;
 
-                    &--reversed {
-                        transform: skew(0) translateX(0);
+                    &--image {
+                        transform: skew(0deg) translateX(0%);
+
+                        &:hover {
+                            transform: scale(1.02) skew(0deg) translateX(0%);
+                        }
                     }
                 }
 
@@ -187,6 +194,14 @@
                     height: 60%;
                     align-items: center;
                     justify-content: center;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 495px) {
+            .section-wrapper {
+                .section-background {
+                    height: 30vh;
                 }
             }
         }
@@ -319,63 +334,20 @@
         }
     }
 
-    //TYPOGRAPHY//
-    section {
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Sailec Medium';
-            color: var(--clr-text-primery-100);
-            span {
-                font-family: 'Sailec Bold';
-                font-weight: 600;
-            }
-        }
-        h2 {
-            font-size: 4rem;
-        }
-        h3 {
-            font-size: 3rem;
-        }
-        h4 {
-            font-size: 2rem;
-        }
-        p {
-            color: var(--clr-text-primery-100);
-            span {
-                font-family: 'Sailec Regular';
-                font-weight: 600;
-            }
-        }
-        p.sub-heading {
-            font-family: 'Sailec Light';
-            padding-block: 0.4rem;
-            span {
-                font-family: 'Sailec Thin';
-                font-weight: 900;
-            }
-        }
-
-        &.section-work {
-            p {
-                color: var(--clr-text-accent-700);
-            }
-        }
-    }
-
     //CAROUSEL//
+
     .carousel {
         position: relative;
-        width: 100%;
+        width: 150%;
         height: 100%;
+        transform: skew(27deg);
 
         &--badge {
             opacity: 0;
             cursor: pointer;
             position: absolute;
             top: 20%;
-            left: 0;
+            left: 21%;
             height: fit-content;
             padding-block: 1.2rem;
             padding-inline-end: 2.5rem;
@@ -426,14 +398,15 @@
             }
         }
 
-        img[data-carousel-main-image] {
-            cursor: pointer;
-            width: 100%;
+        img.image-cover {
+            position: absolute;
+            width: 85%;
             transition: transform 300ms ease;
             will-change: contents;
+            cursor: pointer;
 
-            &.scale-1-02 {
-                transform: scale(1.02);
+            @media only screen and (max-width: 1080px) {
+                width: 90%;
             }
 
             &:hover {
@@ -447,63 +420,15 @@
                     }
                 }
             }
-        }
 
-        &--arrow {
-            z-index: 2;
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: 30px;
-            height: 30px;
-            overflow: hidden;
+            @media only screen and (max-width: 768px) {
+                transform: skew(-27deg) translateX(-32%);
 
-            opacity: 0;
-            transition: transform 200ms ease;
-
-            svg {
-                fill: var(--clr-text-primery-100);
-                width: 100% !important;
-                height: 100% !important;
-            }
-
-            &--right {
-                right: 2rem;
-                transform: translateX(300%);
-                transition: transform 200ms 200ms ease;
-            }
-
-            &--left {
-                left: 2rem;
-                display: none;
-                transform: translateX(-300%);
-                transition: transform 200ms 200ms ease;
+                &:hover {
+                    transform: skew(-27deg) translateX(-32%);
+                }
             }
         }
-
-        &--images-wrapper {
-            width: 100%;
-            height: 100%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: transform 100ms ease, opacity 200ms ease;
-        }
-
-        button {
-            z-index: 2;
-            cursor: pointer;
-            position: absolute;
-            bottom: 1rem;
-            left: 1rem;
-            background: none;
-            border: none;
-            text-transform: uppercase;
-            font-family: 'Sailec Medium';
-            color: var(--clr-text-primery-100);
-            transform: translateY(200%);
-            transition: transform 200ms ease;
-        }
-
         @media only screen and (max-width: 768px) {
             &--badge {
                 display: none;
@@ -511,76 +436,7 @@
         }
     }
 
-    .reversed {
-        .carousel--badge {
-            left: 7%;
-        }
-
-        .carousel--badge--background {
-            transform: skew(27deg) translateX(-0.8rem);
-        }
-    }
-
     .section-background {
         transition: width 200ms ease;
-    }
-
-    .background-expanded {
-        z-index: 1;
-        position: absolute;
-        width: 100% !important;
-        transform: skew(0) !important;
-
-        .section-background--reversed {
-            transform: skew(0) !important;
-        }
-
-        .carousel {
-            &--arrow {
-                opacity: 1;
-
-                &--right {
-                    transform: translateX(0);
-                }
-                &--left {
-                    transform: translateX(0);
-                }
-            }
-
-            &--images-wrapper {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            &--images {
-                width: 100%;
-                height: 100%;
-                display: grid;
-                grid-auto-flow: column;
-                grid-auto-columns: 50%;
-                transition: transform 300ms ease;
-
-                li {
-                    img {
-                        max-width: 100%;
-                        object-fit: contain !important;
-                    }
-
-                    background-color: var(--clr-accent-900);
-                }
-            }
-
-            button {
-                transform: translateY(0);
-            }
-        }
-        @media only screen and (max-width: 768px) {
-            position: relative;
-            .carousel {
-                &--images {
-                    grid-auto-columns: 100%;
-                }
-            }
-        }
     }
 </style>

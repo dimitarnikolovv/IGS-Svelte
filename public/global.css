@@ -524,6 +524,49 @@ body {
     overflow: hidden;
 }
 
+section h1,
+section h2,
+section h3,
+section h4 {
+    font-family: 'Sailec Medium';
+    color: var(--clr-text-primery-100);
+}
+section h1 span,
+section h2 span,
+section h3 span,
+section h4 span {
+    font-family: 'Sailec Bold';
+    font-weight: 500;
+}
+section h2 {
+    font-size: 4rem;
+}
+section h3 {
+    font-size: 3rem;
+}
+section h4 {
+    font-size: 2rem;
+}
+section p {
+    color: var(--clr-text-primery-100);
+    line-height: 1.2rem;
+}
+section p span {
+    font-family: 'Sailec Regular';
+    font-weight: 600;
+}
+section p.sub-heading {
+    font-family: 'Sailec Light';
+    padding-block: 0.4rem;
+}
+section p.sub-heading span {
+    font-family: 'Sailec Thin';
+    font-weight: 900;
+}
+section.section-work p {
+    color: var(--clr-text-accent-700);
+}
+
 .external-link {
     font-family: 'Sailec Regular';
     color: var(--clr-text-accent-700);

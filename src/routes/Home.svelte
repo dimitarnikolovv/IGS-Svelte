@@ -7,6 +7,12 @@
 
 <Main overflow={false}>
     {#if !$isToggled}
+        <div style="position: absolute; top: 2rem; z-index: 10;">
+            <p>
+                <span class="info-text">The loading animation is disabled due to developing.</span>
+            </p>
+        </div>
+
         <div class="languages-wrap">
             <span class="active-lang"><a href="/">EN</a></span>
             <span class="lang-spacer">/</span>
@@ -16,7 +22,12 @@
         </div>
     {/if}
 
-    <Section title="Lorem ipsum dolor sit amet." />
+    <Section carousel={false} image={'./images/covers/home_page.webp'}>
+        <h3>Using new media, we change <span>your ideas</span> into reality!</h3>
+        <p class="content" />
+
+        <p class="content" />
+    </Section>
 
     {#if !$isToggled}
         <RealisationsBtn />
@@ -24,6 +35,13 @@
 </Main>
 
 <style lang="scss">
+    .content {
+        margin-block-start: 3rem;
+    }
+    h3 {
+        text-align: right;
+    }
+
     .languages-wrap {
         z-index: 3;
         position: fixed;
