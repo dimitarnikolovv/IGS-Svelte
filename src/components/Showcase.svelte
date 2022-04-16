@@ -1,11 +1,5 @@
 <script>
-    const photos = {
-        person1: './images/showcase/person1.jpg',
-        person2: './images/showcase/person2.jpg',
-        person3: './images/showcase/person3.jpg',
-        person4: './images/showcase/person4.jpg',
-        person5: './images/showcase/person5.jpg',
-    };
+    import { images } from '../stores';
 
     const clicked = {
         one: false,
@@ -50,7 +44,7 @@
 </script>
 
 <div class="container">
-    <div style="position: absolute; top: 2rem; z-index: 10;">
+    <div style="position: absolute; top: 2rem; z-index: 10; pointer-events: none">
         <p>
             <span class="info-text"
                 >The images are with different color filters. Pay attention on the text and how it
@@ -67,7 +61,7 @@
                 clicked.one = !clicked.one;
             }}
         >
-            <div class="wrap start" style="background-image: url({photos.person1})">
+            <div class="wrap start" style="background-image: url({$images.people.person1})">
                 <div class="content">
                     <h4>Norbert Grzechnik</h4>
                     <p class:hidden={!clicked.one}>
@@ -88,7 +82,7 @@
                 clicked.two = !clicked.two;
             }}
         >
-            <div class="wrap" style="background-image: url({photos.person2})">
+            <div class="wrap" style="background-image: url({$images.people.person2})">
                 <div class="content">
                     <h4>Radosław Frelek</h4>
                     <p class:hidden={!clicked.two}>
@@ -108,7 +102,7 @@
                 clicked.three = !clicked.three;
             }}
         >
-            <div class="wrap" style="background-image: url({photos.person3})">
+            <div class="wrap" style="background-image: url({$images.people.person3})">
                 <div class="content">
                     <h4>Aleksandra Zięb</h4>
                     <p class:hidden={!clicked.three}>
@@ -128,7 +122,7 @@
                 clicked.four = !clicked.four;
             }}
         >
-            <div class="wrap" style="background-image: url({photos.person4})">
+            <div class="wrap" style="background-image: url({$images.people.person4})">
                 <div class="content">
                     <h4>Igor Grzegorz Suski</h4>
                     <p class:hidden={!clicked.four}>
@@ -149,7 +143,7 @@
                 clicked.five = !clicked.five;
             }}
         >
-            <div class="wrap end" style="background-image: url({photos.person5})">
+            <div class="wrap end" style="background-image: url({$images.people.person5})">
                 <div class="content">
                     <h4>Hanna Sosnowska</h4>
                     <p class:hidden={!clicked.five}>

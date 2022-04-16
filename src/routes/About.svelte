@@ -2,13 +2,14 @@
     import Section from '../components/Section.svelte';
     import Main from '../components/Main.svelte';
     import Showcase from '../components/Showcase.svelte';
+    import { images } from '../stores';
 </script>
 
 <Main>
     <Section type="blank">
         <Showcase />
     </Section>
-    <Section carousel={false} image={'./images/covers/who_we_are_1.webp'}>
+    <Section carousel={false} image={$images.covers.about[0]}>
         <p>
             We are a collective of young, <span>creative people</span>. Full of passion and
             <span>professionalism</span>, as well as <span>perfectionism</span> in the actions
@@ -17,7 +18,7 @@
             so much <span>trust from you</span>.
         </p>
     </Section>
-    <Section carousel={false} image={'./images/covers/who_we_are_2.webp'}
+    <Section carousel={false} image={$images.covers.about[1]}
         ><p>
             Our team is divided into those who work in the office, <span
                 >preparing for your concepts</span
@@ -27,7 +28,7 @@
             can <span>constantly develop and improve our skills</span>.
         </p>
     </Section>
-    <Section carousel={false} image={'./images/covers/who_we_are_3.webp'}>
+    <Section carousel={false} image={$images.covers.about[2]}>
         <p>
             Without resting on our laurels, <span>we constantly improve our services</span>, train
             and increase the technical resources of our equipment so that

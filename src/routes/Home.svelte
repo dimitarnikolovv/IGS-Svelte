@@ -1,5 +1,5 @@
 <script>
-    import { isToggled } from '../stores';
+    import { images, isToggled } from '../stores';
     import Main from '../components/Main.svelte';
     import Section from '../components/Section.svelte';
     import RealisationsBtn from '../components/RealisationsBtn.svelte';
@@ -7,12 +7,11 @@
 
 <Main overflow={false}>
     {#if !$isToggled}
-        <div style="position: absolute; top: 2rem; z-index: 10;">
+        <div style="position: absolute; top: 2rem; z-index: 10; pointer-events: none">
             <p>
                 <span class="info-text">The loading animation is disabled due to developing.</span>
             </p>
         </div>
-
         <div class="languages-wrap">
             <span class="active-lang"><a href="/">EN</a></span>
             <span class="lang-spacer">/</span>
@@ -22,7 +21,7 @@
         </div>
     {/if}
 
-    <Section carousel={false} image={'./images/covers/home_page.webp'}>
+    <Section carousel={false} image={$images.covers.home}>
         <h3>Using new media, we change <span>your ideas</span> into reality!</h3>
         <p class="content" />
 

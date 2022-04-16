@@ -11,6 +11,9 @@
     export let type = '';
     export let carousel = false;
     export let image = '';
+    export let gallery = [];
+
+    console.log(gallery);
 </script>
 
 {#if type === ''}
@@ -19,7 +22,10 @@
             <div class="section-background">
                 {#if carousel}
                     <div class="carousel">
-                        <img src="./images/covers/who_we_are_1.webp" alt="" class="image-cover" />
+                        <div
+                            class="carousel-background--image"
+                            style="background-image: url({image});"
+                        />
                         <div class="carousel--badge">
                             <div class="carousel--badge--background" />
                             <div class="carousel--badge--content">
@@ -191,7 +197,7 @@
                     position: relative;
                     right: 0;
                     width: 90%;
-                    height: 60%;
+                    height: 60vh;
                     align-items: center;
                     justify-content: center;
                 }
@@ -338,16 +344,40 @@
 
     .carousel {
         position: relative;
-        width: 150%;
+        width: 100%;
         height: 100%;
-        transform: skew(27deg);
+        transform: skew(27deg) translateX(32%);
+
+        &-background--image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transition: transform 300ms ease;
+            will-change: contents;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+
+            &:hover {
+                transform: scale(1.03);
+                + .carousel--badge {
+                    transform: translateX(-65%);
+                    opacity: 1;
+                    svg {
+                        transform: translateX(15px);
+                    }
+                }
+            }
+        }
 
         &--badge {
-            opacity: 0;
+            opacity: 1;
             cursor: pointer;
             position: absolute;
             top: 20%;
-            left: 21%;
+            left: 0;
             height: fit-content;
             padding-block: 1.2rem;
             padding-inline-end: 2.5rem;
@@ -394,38 +424,6 @@
 
                 svg {
                     transform: translateX(15px);
-                }
-            }
-        }
-
-        img.image-cover {
-            position: absolute;
-            width: 85%;
-            transition: transform 300ms ease;
-            will-change: contents;
-            cursor: pointer;
-
-            @media only screen and (max-width: 1080px) {
-                width: 90%;
-            }
-
-            &:hover {
-                transform: scale(1.02);
-
-                + .carousel--badge {
-                    transform: translateX(-65%);
-                    opacity: 1;
-                    svg {
-                        transform: translateX(15px);
-                    }
-                }
-            }
-
-            @media only screen and (max-width: 768px) {
-                transform: skew(-27deg) translateX(-32%);
-
-                &:hover {
-                    transform: skew(-27deg) translateX(-32%);
                 }
             }
         }

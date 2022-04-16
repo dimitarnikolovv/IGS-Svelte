@@ -4,7 +4,7 @@
 </script>
 
 <main
-    style={overflow ? '' : 'height: calc(120vh - 1rem)'}
+    style={overflow ? '' : 'height: 100vh'}
     in:fly={{ duration: 400, x: 500, delay: 300 }}
     out:fly={{ duration: 200, x: -500 }}
 >
