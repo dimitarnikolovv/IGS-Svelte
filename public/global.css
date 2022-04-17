@@ -530,6 +530,7 @@ section h3,
 section h4 {
     font-family: 'Sailec Medium';
     color: var(--clr-text-primery-100);
+    line-height: 1.2em;
 }
 section h1 span,
 section h2 span,
@@ -537,6 +538,9 @@ section h3 span,
 section h4 span {
     font-family: 'Sailec Bold';
     font-weight: 500;
+}
+section h1 {
+    font-size: 5rem;
 }
 section h2 {
     font-size: 4rem;
@@ -547,9 +551,24 @@ section h3 {
 section h4 {
     font-size: 2rem;
 }
+
+@media only screen and (max-width: 495px) {
+    section h1 {
+        font-size: 3rem;
+    }
+    section h2 {
+        font-size: 2.5rem;
+    }
+    section h3 {
+        font-size: 2rem;
+    }
+    section h4 {
+        font-size: 1.5rem;
+    }
+}
 section p {
     color: var(--clr-text-primery-100);
-    line-height: 1.2rem;
+    line-height: 1.2em;
 }
 section p span {
     font-family: 'Sailec Regular';
@@ -564,6 +583,15 @@ section p.sub-heading span {
     font-weight: 900;
 }
 section.section-work p {
+    color: var(--clr-text-accent-700);
+}
+
+section.section-work h1,
+section.section-work h2,
+section.section-work h3,
+section.section-work h4,
+section.section-work h5,
+section.section-work h6 {
     color: var(--clr-text-accent-700);
 }
 

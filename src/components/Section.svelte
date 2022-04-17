@@ -1,32 +1,45 @@
 <script>
-    import AOS from 'aos';
     import 'aos/dist/aos.css';
-
-    import { onMount } from 'svelte';
-
-    onMount(() => {
-        AOS.init();
-    });
+    import Slider from '../components/Slider.svelte';
 
     export let type = '';
     export let carousel = false;
     export let image = '';
     export let gallery = [];
 
-    console.log(gallery);
+    let showSlider = false;
 </script>
 
 {#if type === ''}
     <section>
         <div class="section-wrapper">
+            {#if showSlider}
+                <div
+                    class="close-slider"
+                    on:click={() => {
+                        showSlider = false;
+                    }}
+                >
+                    <p style="color: white; font-weight:800;">X</p>
+                </div>
+                <Slider images={gallery} />
+            {/if}
             <div class="section-background">
                 {#if carousel}
                     <div class="carousel">
                         <div
                             class="carousel-background--image"
                             style="background-image: url({image});"
+                            on:click={() => {
+                                showSlider = true;
+                            }}
                         />
-                        <div class="carousel--badge">
+                        <div
+                            class="carousel--badge"
+                            on:click={() => {
+                                showSlider = true;
+                            }}
+                        >
                             <div class="carousel--badge--background" />
                             <div class="carousel--badge--content">
                                 <h4>See More</h4>
@@ -49,7 +62,7 @@
                     />
                 {/if}
             </div>
-            <div class="section-container">
+            <div class="section-container" class:section-container-double={carousel}>
                 <slot />
             </div>
         </div>
@@ -95,6 +108,14 @@
 {/if}
 
 <style lang="scss">
+    div.close-slider {
+        z-index: 3;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        height: fit-content;
+        cursor: pointer;
+    }
     section {
         position: relative;
         width: 90vw;
@@ -107,6 +128,7 @@
 
         .section-wrapper {
             display: flex;
+            align-items: center;
             width: 100%;
             min-height: inherit;
 
@@ -148,6 +170,16 @@
                 flex-direction: column;
                 align-items: flex-end;
                 justify-content: center;
+                gap: 1rem;
+            }
+
+            .section-container-double {
+                width: 98%;
+                height: unset;
+                right: 1%;
+                flex-direction: row;
+                align-items: center;
+                // pointer-events: none;
             }
         }
 
@@ -201,6 +233,12 @@
                     align-items: center;
                     justify-content: center;
                 }
+
+                .section-container-double {
+                    flex-direction: column;
+                    width: 90%;
+                    height: 60vh;
+                }
             }
         }
 
@@ -208,6 +246,21 @@
             .section-wrapper {
                 .section-background {
                     height: 30vh;
+                }
+
+                .section-container {
+                    position: relative;
+                    right: 0;
+                    width: 90%;
+                    height: 80vh;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .section-container-double {
+                    flex-direction: column;
+                    width: 90%;
+                    height: 80vh;
                 }
             }
         }
@@ -250,14 +303,6 @@
 
                     &--left,
                     &--right {
-                        h1,
-                        h2,
-                        h3,
-                        h4,
-                        h5,
-                        h6 {
-                            color: var(--clr-text-accent-700);
-                        }
                         width: 40%;
                         :first-child {
                             margin-block-end: 2rem;
@@ -428,6 +473,7 @@
             }
         }
         @media only screen and (max-width: 768px) {
+            transform: skew(0) translateX(0);
             &--badge {
                 display: none;
             }

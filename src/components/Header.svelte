@@ -9,7 +9,7 @@
     let scrollY;
 
     const unsubscribe = isToggled.subscribe(() => {});
-    onDestroy(unsubscribe);
+    // onDestroy(unsubscribe);
 </script>
 
 <svelte:window bind:scrollY />

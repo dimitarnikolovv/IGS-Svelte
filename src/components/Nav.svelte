@@ -16,7 +16,11 @@
 </script>
 
 {#if $isToggled}
-    <div class="navigation-main" transition:fly={{ duration: 300, x: 400, delay: 200 }}>
+    <div
+        class="navigation-main"
+        in:fly={{ duration: 400, x: 500, delay: 300 }}
+        out:fly={{ duration: 300, x: -500 }}
+    >
         <nav>
             <ul class="nav-links">
                 <li class="nav-link" on:mouseenter={onMouseIn} on:mouseleave={onMouseOut}>

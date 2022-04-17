@@ -1,13 +1,16 @@
 <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
+    import { onMount, onDestroy } from 'svelte';
     import Loader from './components/Loader.svelte';
     import Nav from './components/Nav.svelte';
     import Header from './components/Header.svelte';
-    import { onMount, onDestroy } from 'svelte';
     import Router from 'svelte-spa-router';
     import routes from './routes';
     import { isToggled } from './stores';
 
     onMount(() => {
+        AOS.init();
         window.onload = () => {
             window.scrollTo(0, 0);
             setTimeout(() => {
