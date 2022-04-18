@@ -4,7 +4,7 @@
 </script>
 
 <main
-    style={overflow ? '' : 'height: 100vh'}
+    class:only-item={!overflow}
     in:fly={{ duration: 400, x: 500, delay: 300 }}
     out:fly={{ duration: 200, x: -500 }}
 >
@@ -12,6 +12,13 @@
 </main>
 
 <style lang="scss">
+    .only-item {
+        height: 100vh;
+
+        @media only screen and (max-width: 768px) {
+            height: 125vh;
+        }
+    }
     main {
         width: 100%;
         height: 100%;

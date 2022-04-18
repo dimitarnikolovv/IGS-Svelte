@@ -24,7 +24,7 @@
         <nav>
             <ul class="nav-links">
                 <li class="nav-link" on:mouseenter={onMouseIn} on:mouseleave={onMouseOut}>
-                    <a class="nav-a" href="/" on:click={navClick}>
+                    <a class="nav-a" href="/#/" on:click={navClick}>
                         <p class="nav-title">home</p>
                         <p class="nav-sub-title">Where it all began</p></a
                     >

@@ -15,7 +15,7 @@
         <div class="languages-wrap">
             <span class="active-lang"><a href="/">EN</a></span>
             <span class="lang-spacer">/</span>
-            <span><a href="/en">BG</a></span>
+            <span><a href="/bg">BG</a></span>
             <span class="lang-spacer">/</span>
             <span><a href="/pl">PL</a></span>
         </div>

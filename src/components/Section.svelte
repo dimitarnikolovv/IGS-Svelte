@@ -1,6 +1,6 @@
 <script>
-    import 'aos/dist/aos.css';
     import Slider from '../components/Slider.svelte';
+    import Saos from 'saos';
 
     export let type = '';
     export let carousel = false;
@@ -80,28 +80,14 @@
         <div class="section-wrapper">
             <div class="section-container-work">
                 <div class="content-wrap">
-                    <div class="content-wrap--x">
-                        <div class="content-wrap--right">
-                            <h4>Ttitle</h4>
-                            <p data-aos="fade-down-right">par</p>
-                        </div>
-                        <div class="content-wrap--left">
-                            <h4>Title</h4>
-                            <p data-aos="fade-down-left">par</p>
-                        </div>
-                    </div>
-                    <div class="content-wrap--x">
-                        <div class="content-wrap--right">
-                            <h4>Title</h4>
-                            <p data-aos="fade-down-right">par</p>
-                        </div>
-                        <div class="content-wrap--left">
-                            <h4>Title</h4>
-                            <p data-aos="fade-down-left">par</p>
-                        </div>
-                    </div>
+                    <slot />
                 </div>
-                <div class="devider" data-aos="slide-down" data-aos-offset="300" />
+                <Saos
+                    animation={'from-top 400ms ease both'}
+                    animation_out={'from-top 400ms ease both reverse'}
+                >
+                    <div class="devider" />
+                </Saos>
             </div>
         </div>
     </section>
@@ -267,19 +253,28 @@
     }
 
     section.section-work {
-        min-height: calc(80vh - 7rem);
-        height: 90vh;
-        max-height: max-content;
+        min-height: 90vh;
+        max-height: 200vh;
+        @media only screen and (max-width: 1080px) {
+            height: 120vh;
+        }
         background-color: wheat;
         background-color: transparent;
         padding-block: 1rem;
         .section-wrapper {
+            display: block;
+            @media only screen and (max-width: 1080px) {
+                height: fit-content;
+            }
             .section-container-work {
                 position: absolute;
                 display: flex;
                 align-items: center;
                 width: 100%;
                 min-height: inherit;
+                @media only screen and (max-width: 1080px) {
+                    justify-content: center;
+                }
 
                 .content-wrap {
                     display: flex;
@@ -288,30 +283,8 @@
                     align-items: flex-start;
                     justify-content: flex-start;
 
-                    &--x {
-                        position: relative;
-                        display: flex;
-                        width: 100%;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        &:first-child {
-                            margin-block-end: 4rem;
-                        }
-                    }
-
-                    &--left,
-                    &--right {
-                        width: 40%;
-                        :first-child {
-                            margin-block-end: 2rem;
-                            width: fit-content;
-                        }
-
-                        p {
-                            max-width: 90%;
-                        }
+                    @media only screen and (max-width: 1080px) {
+                        width: 95%;
                     }
                 }
             }
@@ -342,7 +315,7 @@
             }
         }
         @media only screen and (max-width: 768px) {
-            height: 150vh;
+            height: fit-content;
             min-height: 150vh;
             padding-block: 1rem;
             .section-wrapper {
@@ -353,24 +326,6 @@
 
                     .content-wrap {
                         align-items: center;
-
-                        &--x {
-                            position: relative;
-                            display: flex;
-                            width: 90%;
-                            flex-direction: column;
-                            align-items: center;
-
-                            &:first-child {
-                                margin-block-end: 0;
-                            }
-                        }
-
-                        &--left,
-                        &--right {
-                            width: 100%;
-                            margin-block-end: 1rem;
-                        }
                     }
                 }
                 .devider {
@@ -380,7 +335,7 @@
         }
 
         @media only screen and (max-height: 670px) {
-            height: 210vh;
+            height: fit-content;
             min-height: 210vh;
         }
     }
@@ -482,5 +437,44 @@
 
     .section-background {
         transition: width 200ms ease;
+    }
+
+    //ANIMATIONS//
+
+    @keyframes -global-from-top-left {
+        0% {
+            transform: translate(-400px, -200px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+    @keyframes -global-from-top-right {
+        0% {
+            transform: translate(400px, -200px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+    @keyframes -global-from-top {
+        0% {
+            height: 80%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateY(-100%);
+        }
+        100% {
+            height: 80%;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translateY(0, 0);
+        }
     }
 </style>

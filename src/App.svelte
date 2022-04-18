@@ -1,55 +1,38 @@
 <script>
-    import AOS from 'aos';
-    import 'aos/dist/aos.css';
-    import { onMount, onDestroy } from 'svelte';
-    import Loader from './components/Loader.svelte';
-    import Nav from './components/Nav.svelte';
-    import Header from './components/Header.svelte';
+    import { onMount } from 'svelte';
     import Router from 'svelte-spa-router';
     import routes from './routes';
     import { isToggled } from './stores';
+    import MediaQuery from './components/MediaQuery.svelte';
+    import Loader from './components/Loader.svelte';
+    import Nav from './components/Nav.svelte';
+    import Header from './components/Header.svelte';
 
     onMount(() => {
-        AOS.init();
         window.onload = () => {
             window.scrollTo(0, 0);
-            setTimeout(() => {
-                rotateMessage();
-            }, 0);
             setTimeout(() => {
                 document.querySelector('body').style.overflowY = 'visible';
             }, 2800);
         };
-
-        window.addEventListener('resize', rotateMessage);
-
-        function rotateMessage() {
-            if (window.matchMedia('(max-width: 940px) and (max-height: 430px)').matches) {
-                document.querySelector('.rotate-phone').style.display = 'flex';
-                document.querySelector('main').style.display = 'none';
-            } else {
-                document.querySelector('.rotate-phone').style.display = 'none';
-                document.querySelector('main').style.display = 'flex';
-            }
-        }
     });
 
     let scrollY;
-
-    const unsubscribe = isToggled.subscribe(() => {});
-
-    onDestroy(unsubscribe);
 </script>
 
 <svelte:window bind:scrollY />
 
 <!-- <Loader /> -->
 
-<div class="rotate-phone" style="display: none">
-    <div class="rotate-wrap">
-        <h3>Please, rotate your phone :)</h3>
-    </div>
-</div>
+<MediaQuery query="(max-width: 940px) and (max-height: 430px)" let:matches>
+    {#if matches}
+        <div class="rotate-phone">
+            <div class="rotate-wrap">
+                <h3>Please, rotate your phone :)</h3>
+            </div>
+        </div>
+    {/if}
+</MediaQuery>
 
 <div class="app-wrapper">
     <Header />
