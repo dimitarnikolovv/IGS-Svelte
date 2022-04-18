@@ -7,11 +7,14 @@
     export let image = '';
     export let gallery = [];
 
+    export let sectionLabel = '';
+
     let showSlider = false;
+    let scaled = false;
 </script>
 
 {#if type === ''}
-    <section>
+    <section aria-label={sectionLabel}>
         <div class="section-wrapper">
             {#if showSlider}
                 <div
@@ -29,6 +32,7 @@
                     <div class="carousel">
                         <div
                             class="carousel-background--image"
+                            class:scale-1-03={scaled}
                             style="background-image: url({image});"
                             on:click={() => {
                                 showSlider = true;
@@ -38,6 +42,12 @@
                             class="carousel--badge"
                             on:click={() => {
                                 showSlider = true;
+                            }}
+                            on:mouseenter={() => {
+                                scaled = true;
+                            }}
+                            on:mouseleave={() => {
+                                scaled = false;
                             }}
                         >
                             <div class="carousel--badge--background" />
@@ -70,13 +80,13 @@
 {/if}
 
 {#if type === 'blank'}
-    <section>
+    <section aria-label={sectionLabel}>
         <slot />
     </section>
 {/if}
 
 {#if type === 'work'}
-    <section class="section-work">
+    <section class="section-work" aria-label={sectionLabel}>
         <div class="section-wrapper">
             <div class="section-container-work">
                 <div class="content-wrap">
@@ -101,6 +111,10 @@
         right: 2rem;
         height: fit-content;
         cursor: pointer;
+    }
+
+    .scale-1-03 {
+        transform: scale(1.03);
     }
     section {
         position: relative;
@@ -255,8 +269,11 @@
     section.section-work {
         min-height: 90vh;
         max-height: 200vh;
-        @media only screen and (max-width: 1080px) {
-            height: 120vh;
+        @media only screen and (max-width: 1350px) {
+            height: 110vh;
+        }
+        @media only screen and (max-width: 1010px) {
+            height: 140vh;
         }
         background-color: wheat;
         background-color: transparent;
@@ -362,8 +379,8 @@
 
             &:hover {
                 transform: scale(1.03);
-                + .carousel--badge {
-                    transform: translateX(-65%);
+                ~ .carousel--badge {
+                    transform: translateX(0);
                     opacity: 1;
                     svg {
                         transform: translateX(15px);
@@ -373,7 +390,7 @@
         }
 
         &--badge {
-            opacity: 1;
+            opacity: 0;
             cursor: pointer;
             position: absolute;
             top: 20%;

@@ -2,6 +2,7 @@
     import Saos from 'saos';
     export let direction = '';
     export let title = 'Title';
+    export let multipleItems = false;
 </script>
 
 <h4>{title}</h4>
@@ -19,10 +20,21 @@
     top={150}
     bottom={150}
 >
-    <slot />
+    {#if multipleItems}
+        <div>
+            <slot />
+        </div>
+    {:else}
+        <slot />
+    {/if}
 </Saos>
 
 <style lang="scss">
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
     @keyframes -global-from-top-left {
         0% {
             transform: translate(-400px, -200px);

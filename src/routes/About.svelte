@@ -6,10 +6,10 @@
 </script>
 
 <Main>
-    <Section type="blank">
+    <Section type="blank" sectionLabel="Meet our team">
         <Showcase />
     </Section>
-    <Section carousel={false} image={$images.covers.about[0]}>
+    <Section carousel={false} image={$images.covers.about[0]} sectionLabel="Who we are?">
         <p>
             We are a collective of young, <span>creative people</span>. Full of passion and
             <span>professionalism</span>, as well as <span>perfectionism</span> in the actions
@@ -18,7 +18,7 @@
             so much <span>trust from you</span>.
         </p>
     </Section>
-    <Section carousel={false} image={$images.covers.about[1]}
+    <Section carousel={false} image={$images.covers.about[1]} sectionLabel="How we work?"
         ><p>
             Our team is divided into those who work in the office, <span
                 >preparing for your concepts</span
@@ -28,7 +28,7 @@
             can <span>constantly develop and improve our skills</span>.
         </p>
     </Section>
-    <Section carousel={false} image={$images.covers.about[2]}>
+    <Section carousel={false} image={$images.covers.about[2]} sectionLabel="We are prosperous">
         <p>
             Without resting on our laurels, <span>we constantly improve our services</span>, train
             and increase the technical resources of our equipment so that

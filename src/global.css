@@ -568,7 +568,7 @@ section h4 {
 }
 section p {
     color: var(--clr-text-primery-100);
-    line-height: 1.2em;
+    line-height: 1.5em;
 }
 section p span {
     font-family: 'Sailec Regular';
@@ -597,7 +597,27 @@ section.section-work h6 {
 
 .external-link {
     font-family: 'Sailec Regular';
-    color: var(--clr-text-accent-700);
+    display: inline-block;
+    position: relative;
+    color: var(--clr-primery-700);
+}
+
+.external-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--clr-text-accent-700);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.external-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .info-text {

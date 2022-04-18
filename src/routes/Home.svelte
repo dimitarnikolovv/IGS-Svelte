@@ -23,9 +23,6 @@
 
     <Section carousel={false} image={$images.covers.home}>
         <h3>Using new media, we change <span>your ideas</span> into reality!</h3>
-        <p class="content" />
-
-        <p class="content" />
     </Section>
 
     {#if !$isToggled}
@@ -34,9 +31,6 @@
 </Main>
 
 <style lang="scss">
-    .content {
-        margin-block-start: 3rem;
-    }
     h3 {
         text-align: right;
     }

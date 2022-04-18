@@ -1,4 +1,5 @@
 <script>
+    import './global.css';
     import { onMount } from 'svelte';
     import Router from 'svelte-spa-router';
     import routes from './routes';

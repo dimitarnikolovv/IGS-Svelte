@@ -60,7 +60,7 @@ export const images = readable({
     },
     covers: {
         home: './images/covers/home_page.webp',
-        contact: './images/covers/contact/contact_us.webp',
+        contact: './images/covers/contact_us.webp',
         about: [
             './images/covers/who_we_are_1.webp',
             './images/covers/who_we_are_2.webp',

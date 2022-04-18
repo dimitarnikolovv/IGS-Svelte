@@ -12,7 +12,7 @@
         autoHeight: true,
         autoWidth: true,
         type: 'loop',
-        perPage: 3,
+        perPage: 1,
         perMove: 1,
         pagination: false,
         focus: 'center',
@@ -33,17 +33,6 @@
                     </SplideSlide>
                 {/each}
             </SplideTrack>
-
-            <div class="splide__arrows">
-                <button class="splide__arrow splide__arrow--prev">
-                    <!-- <ArrowSlide direction="left" /> -->
-                </button>
-                <button class="splide__arrow splide__arrow--next">
-                    <!-- <ArrowSlide direction="right" /> -->
-                </button>
-                <div class="background background--left" />
-                <div class="background background--right" />
-            </div>
         </div>
 
         <div class="splide__progress">
@@ -63,7 +52,7 @@
         height: calc(100vh - 5rem);
 
         .image-wh {
-            width: 50vw;
+            width: 60vw;
             height: calc(100vh - 5rem);
             background-repeat: no-repeat;
             background-size: cover;
