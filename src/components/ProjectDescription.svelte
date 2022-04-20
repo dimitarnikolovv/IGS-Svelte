@@ -18,7 +18,7 @@
         ? 'from-top-right 600ms ease forwards reverse'
         : ''}
     top={150}
-    bottom={150}
+    bottom={100}
 >
     {#if multipleItems}
         <div>

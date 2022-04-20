@@ -5,14 +5,6 @@
     function navClick() {
         $isToggled = false;
     }
-
-    function onMouseIn() {
-        $menuDark = true;
-    }
-
-    function onMouseOut() {
-        $menuDark = false;
-    }
 </script>
 
 {#if $isToggled}
@@ -21,28 +13,50 @@
         in:fly={{ duration: 400, x: 500, delay: 300 }}
         out:fly={{ duration: 300, x: -500 }}
     >
-        <nav>
+        <nav aria-label="Navigation">
             <ul class="nav-links">
-                <li class="nav-link" on:mouseenter={onMouseIn} on:mouseleave={onMouseOut}>
-                    <a class="nav-a" href="/#/" on:click={navClick}>
+                <li
+                    class="nav-link"
+                    on:mouseenter={() => {
+                        $menuDark = true;
+                    }}
+                    on:mouseleave={() => {
+                        $menuDark = false;
+                    }}
+                >
+                    <a class="nav-a" href="/#/" aria-label="Navigation element" on:click={navClick}>
                         <p class="nav-title">home</p>
                         <p class="nav-sub-title">Where it all began</p></a
                     >
                 </li>
                 <li class="nav-link">
-                    <a class="nav-a" href="/#/about" on:click={navClick}>
+                    <a
+                        class="nav-a"
+                        href="/#/about"
+                        aria-label="Navigation element"
+                        on:click={navClick}
+                    >
                         <p class="nav-title">who we are</p>
                         <p class="nav-sub-title">Get to know us better</p></a
                     >
                 </li>
                 <li class="nav-link">
-                    <a class="nav-a" href="/#/realisations" on:click={navClick}
+                    <a
+                        class="nav-a"
+                        href="/#/realisations"
+                        aria-label="Navigation element"
+                        on:click={navClick}
                         ><p class="nav-title">realisations</p>
                         <p class="nav-sub-title">See what we are proud of</p></a
                     >
                 </li>
                 <li class="nav-link">
-                    <a class="nav-a" href="/#/contact" on:click={navClick}>
+                    <a
+                        class="nav-a"
+                        href="/#/contact"
+                        aria-label="Navigation element"
+                        on:click={navClick}
+                    >
                         <p class="nav-title">contact us</p>
                         <p class="nav-sub-title">We are waiting for you</p></a
                     >

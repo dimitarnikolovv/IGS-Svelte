@@ -490,6 +490,13 @@ template {
     display: none;
 }
 
+button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
 @font-face {
     font-family: 'Sailec Regular';
     src: url('./fonts/Sailec-Regular-Italic.ttf') format('truetype');

@@ -14,10 +14,7 @@
 <style lang="scss">
     .only-item {
         height: 100vh;
-
-        @media only screen and (max-width: 768px) {
-            height: 125vh;
-        }
+        padding-block: 0;
     }
     main {
         width: 100%;
@@ -26,9 +23,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 6rem;
+        padding-block: 3rem;
 
         @media only screen and (max-width: 1080px) {
-            margin: 0;
+            padding-block: 0;
         }
     }
 </style>

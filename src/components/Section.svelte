@@ -1,6 +1,9 @@
 <script>
     import Slider from '../components/Slider.svelte';
+    import MediaQuery from './MediaQuery.svelte';
     import Saos from 'saos';
+    import inView from '../isInView';
+    import { darkenMenu } from '../stores';
 
     export let type = '';
     export let carousel = false;
@@ -86,21 +89,33 @@
 {/if}
 
 {#if type === 'work'}
-    <section class="section-work" aria-label={sectionLabel}>
-        <div class="section-wrapper">
-            <div class="section-container-work">
-                <div class="content-wrap">
-                    <slot />
+    <MediaQuery query="(max-width: 768px)" let:matches>
+        <section
+            class="section-work"
+            use:inView={{ bottom: 630 }}
+            on:enter={() => {
+                if (matches) $darkenMenu = true;
+            }}
+            on:exit={() => {
+                if (matches) $darkenMenu = false;
+            }}
+            aria-label={sectionLabel}
+        >
+            <div class="section-wrapper">
+                <div class="section-container-work">
+                    <div class="content-wrap">
+                        <slot />
+                    </div>
+                    <Saos
+                        animation={'from-top 400ms ease both'}
+                        animation_out={'from-top 400ms ease both reverse'}
+                    >
+                        <div class="devider" />
+                    </Saos>
                 </div>
-                <Saos
-                    animation={'from-top 400ms ease both'}
-                    animation_out={'from-top 400ms ease both reverse'}
-                >
-                    <div class="devider" />
-                </Saos>
             </div>
-        </div>
-    </section>
+        </section>
+    </MediaQuery>
 {/if}
 
 <style lang="scss">
@@ -120,21 +135,19 @@
         position: relative;
         width: 90vw;
         height: calc(100vh - 5rem);
-        max-height: 90vh;
         background-color: var(--clr-primery-700);
         overflow: hidden;
-        margin-block: 3rem;
         margin-inline: auto;
 
         .section-wrapper {
             display: flex;
             align-items: center;
             width: 100%;
-            min-height: inherit;
+            height: inherit;
 
             .section-background {
                 width: 54vw;
-                height: calc(100vh - 5rem);
+                height: inherit;
                 background-color: transparent;
                 transform: skew(-27deg) translateX(-32%);
                 box-shadow: 0 -2px 10px 6px rgba(0, 0, 0, 0.664);
@@ -165,7 +178,7 @@
                 position: absolute;
                 right: 2%;
                 width: 48%;
-                height: 100%;
+                height: inherit;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
@@ -179,18 +192,12 @@
                 right: 1%;
                 flex-direction: row;
                 align-items: center;
-                // pointer-events: none;
             }
         }
 
         @media only screen and (max-width: 1080px) {
-            position: relative;
             width: 100vw;
             height: 100vh;
-            min-height: 100vh;
-            margin-block-start: 0;
-            margin-block-end: 5vh;
-
             .section-wrapper {
                 .section-background {
                     height: 100vh;
@@ -199,12 +206,6 @@
         }
 
         @media only screen and (max-width: 768px) {
-            position: relative;
-            width: 100vw;
-            height: 120vh;
-            min-height: 120vh;
-            margin-block-end: 5vh;
-
             .section-wrapper {
                 flex-direction: column;
                 align-items: center;
@@ -214,7 +215,6 @@
                     height: 50vh;
                     transform: skew(0) translateX(0);
                     box-shadow: 0 -2px 10px 6px rgba(0, 0, 0, 0.664);
-                    margin-block-end: 2vh;
 
                     &--image {
                         transform: skew(0deg) translateX(0%);
@@ -229,7 +229,7 @@
                     position: relative;
                     right: 0;
                     width: 90%;
-                    height: 60vh;
+                    height: 50vh;
                     align-items: center;
                     justify-content: center;
                 }
@@ -237,7 +237,7 @@
                 .section-container-double {
                     flex-direction: column;
                     width: 90%;
-                    height: 60vh;
+                    height: 50vh;
                 }
             }
         }
@@ -252,7 +252,7 @@
                     position: relative;
                     right: 0;
                     width: 90%;
-                    height: 80vh;
+                    height: 70vh;
                     align-items: center;
                     justify-content: center;
                 }
@@ -260,31 +260,22 @@
                 .section-container-double {
                     flex-direction: column;
                     width: 90%;
-                    height: 80vh;
+                    height: 70vh;
                 }
             }
         }
     }
 
     section.section-work {
-        min-height: 90vh;
+        min-height: fit-content;
+        height: fit-content;
         max-height: 200vh;
-        @media only screen and (max-width: 1350px) {
-            height: 110vh;
-        }
-        @media only screen and (max-width: 1010px) {
-            height: 140vh;
-        }
-        background-color: wheat;
         background-color: transparent;
-        padding-block: 1rem;
+        margin-block-end: 3rem;
         .section-wrapper {
             display: block;
-            @media only screen and (max-width: 1080px) {
-                height: fit-content;
-            }
+            min-height: inherit;
             .section-container-work {
-                position: absolute;
                 display: flex;
                 align-items: center;
                 width: 100%;
@@ -332,8 +323,6 @@
             }
         }
         @media only screen and (max-width: 768px) {
-            height: fit-content;
-            min-height: 150vh;
             padding-block: 1rem;
             .section-wrapper {
                 .section-container-work {
@@ -349,11 +338,6 @@
                     display: none;
                 }
             }
-        }
-
-        @media only screen and (max-height: 670px) {
-            height: fit-content;
-            min-height: 210vh;
         }
     }
 

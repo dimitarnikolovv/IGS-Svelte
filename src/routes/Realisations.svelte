@@ -10,12 +10,13 @@
         carousel={true}
         image={$images.projects.project1.images[$images.projects.project1.images.length - 1]}
         gallery={$images.projects.project1.images}
+        sectionLabel="Project section"
     >
         <div class="right">
             <h3>ZPE - Integrated Educational Platform</h3>
         </div>
     </Section>
-    <Section type="work">
+    <Section type="work" sectionLabel="About the project above">
         <div class="content-wrap--x">
             <div class="content-wrap--right">
                 <ProjectDescription
@@ -90,12 +91,13 @@
         carousel={true}
         image={$images.projects.project2.images[$images.projects.project2.images.length - 1]}
         gallery={$images.projects.project2.images}
+        sectionLabel="Project section"
     >
         <div class="right">
             <h3>The future through the past</h3>
         </div>
     </Section>
-    <Section type="work">
+    <Section type="work" sectionLabel="About the project above">
         <div class="content-wrap--x">
             <div class="content-wrap--right">
                 <ProjectDescription
@@ -165,12 +167,13 @@
         carousel={true}
         image={$images.projects.project3.images[$images.projects.project3.images.length - 1]}
         gallery={$images.projects.project3.images}
+        sectionLabel="Project section"
     >
         <div class="right">
             <h3>Karolina Stanisławczyk - Do you like me?</h3>
         </div>
     </Section>
-    <Section type="work">
+    <Section type="work" sectionLabel="About the project above">
         <div class="content-wrap--x">
             <div class="content-wrap--right">
                 <ProjectDescription title="About the project:" direction="top-left">
@@ -232,6 +235,7 @@
         carousel={true}
         image={$images.projects.project4.images[$images.projects.project4.images.length - 1]}
         gallery={$images.projects.project4.images}
+        sectionLabel="Project section"
     >
         <div class="right">
             <h3>
@@ -240,7 +244,7 @@
             </h3>
         </div>
     </Section>
-    <Section type="work">
+    <Section type="work" sectionLabel="About the project above">
         <div class="content-wrap--x">
             <div class="content-wrap--right">
                 <ProjectDescription
@@ -317,12 +321,13 @@
         carousel={true}
         image={$images.projects.project5.images[$images.projects.project5.images.length - 1]}
         gallery={$images.projects.project5.images}
+        sectionLabel="Project section"
     >
         <div class="right">
             <h3>Yasir - Dope</h3>
         </div>
     </Section>
-    <Section type="work">
+    <Section type="work" sectionLabel="About the project above">
         <div class="content-wrap--x">
             <div class="content-wrap--right">
                 <ProjectDescription title="About the project:" direction="top-left">

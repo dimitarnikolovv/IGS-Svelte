@@ -2,6 +2,7 @@ import { readable, writable } from 'svelte/store';
 
 export const isToggled = writable(false);
 export const menuDark = writable(false);
+export const darkenMenu = writable(false);
 export const images = readable({
     projects: {
         project1: {

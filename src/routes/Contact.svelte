@@ -6,7 +6,7 @@
 </script>
 
 <Main overflow={false}>
-    <Section carousel={false} image={$images.covers.contact}>
+    <Section carousel={false} image={$images.covers.contact} sectionLabel="Contacts section">
         <h3>Contact <span>us</span></h3>
     </Section>
 </Main>

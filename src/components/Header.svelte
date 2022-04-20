@@ -1,26 +1,31 @@
 <script>
-    import { onDestroy } from 'svelte';
-    import { isToggled, menuDark } from '../stores';
+    import { isToggled, menuDark, darkenMenu } from '../stores';
 
     function changeToggled() {
         $isToggled = !$isToggled;
     }
 
     let scrollY;
-
-    const unsubscribe = isToggled.subscribe(() => {});
-    // onDestroy(unsubscribe);
 </script>
 
 <svelte:window bind:scrollY />
 
 <div class="hamburger-wrap app-head" class:head-on-scroll={scrollY > 40 ? true : false}>
-    <div class="hamburger" class:animate-hamburger-bg={$isToggled} class:menu-dark={$menuDark}>
-        <div id="nav-link" on:click={changeToggled}>
+    <div
+        class="hamburger"
+        class:animate-hamburger-bg={$isToggled}
+        class:menu-dark={$menuDark}
+        class:darken-menu={$darkenMenu}
+    >
+        <button
+            id="nav-link"
+            on:click={changeToggled}
+            aria-label={$isToggled ? 'Close navigation' : 'Open navigation'}
+        >
             <div data-cross="1" class:animate-hamburger-1={$isToggled} />
             <div data-cross="hide" class:animate-hamburger-hide={$isToggled} />
             <div data-cross="2" class:animate-hamburger-2={$isToggled} />
-        </div>
+        </button>
     </div>
     <div class="menu" />
 </div>
@@ -79,7 +84,8 @@
             transition: all 400ms ease;
         }
 
-        div {
+        div,
+        button {
             margin-block: 4px;
             height: 2px;
         }
@@ -173,6 +179,16 @@
         @media only screen and (max-width: 1151px) {
             #nav-link::after {
                 color: var(--clr-primery-100);
+            }
+        }
+    }
+
+    .darken-menu {
+        #nav-link {
+            color: var(--clr-accent-900) !important;
+
+            & > * {
+                background-color: var(--clr-accent-900) !important;
             }
         }
     }
