@@ -14,7 +14,7 @@
             window.scrollTo(0, 0);
             setTimeout(() => {
                 document.querySelector('body').style.overflowY = 'visible';
-            }, 2800);
+            }, 4700);
         };
     });
 
@@ -23,7 +23,7 @@
 
 <svelte:window bind:scrollY />
 
-<!-- <Loader /> -->
+<Loader />
 
 <MediaQuery query="(max-width: 940px) and (max-height: 430px)" let:matches>
     {#if matches}

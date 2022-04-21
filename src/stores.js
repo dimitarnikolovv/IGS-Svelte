@@ -69,10 +69,10 @@ export const images = readable({
         ],
     },
     people: {
-        person1: './images/showcase/person1.jpg',
-        person2: './images/showcase/person2.jpg',
-        person3: './images/showcase/person3.jpg',
-        person4: './images/showcase/person4.jpg',
-        person5: './images/showcase/person5.jpg',
+        person1: './images/showcase/person1.webp',
+        person2: './images/showcase/person2.webp',
+        person3: './images/showcase/person3.webp',
+        person4: './images/showcase/person4.webp',
+        person5: './images/showcase/person5.webp',
     },
 });

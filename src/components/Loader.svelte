@@ -6,7 +6,7 @@
         const timeLineLoader = gsap.timeline();
 
         timeLineLoader
-            .delay(3.5)
+            .delay(4)
             .from('.loader-animate-left', { y: '-101%', duration: 0.8 }, 'slider-y')
             .from('.loader-animate-right', { y: '101%', duration: 0.8 }, 'slider-y')
             .to('.loader-logo', { scale: 0, duration: 0.1 })
@@ -19,7 +19,11 @@
 </script>
 
 <div class="loader">
-    <img class="loader-logo" src="./images/logo.gif" alt="" loop="false" />
+    <video class="loader-logo" autoplay muted>
+        <track kind="captions" />
+        <source src="./images/logo.webm" type="video/webm" />
+        Your browser does not support the video tag.
+    </video>
     <ul class="loader-slides">
         <li class="loader-animate-left" />
         <li class="loader-animate-right" />
@@ -38,7 +42,7 @@
         height: 100vh;
         overflow: hidden;
 
-        img {
+        video {
             position: absolute;
             width: 35%;
         }

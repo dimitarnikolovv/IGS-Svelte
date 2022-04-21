@@ -1,8 +1,8 @@
 <script>
-    import { images, isToggled } from '../stores';
+    import { images } from '../stores';
     import Main from '../components/Main.svelte';
     import Section from '../components/Section.svelte';
-    // import RealisationsBtn from '../components/RealisationsBtn.svelte';
+    import Footer from '../components/Footer.svelte';
 </script>
 
 <Main overflow={false}>
@@ -10,6 +10,8 @@
         <h3>Contact <span>us</span></h3>
     </Section>
 </Main>
+
+<Footer />
 
 <style lang="scss">
     h3 {

@@ -497,29 +497,55 @@ button {
     border: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #00000017;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 @font-face {
     font-family: 'Sailec Regular';
     src: url('./fonts/Sailec-Regular-Italic.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Sailec Light';
     src: url('./fonts/Sailec-Light.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Sailec Bold';
     src: url('./fonts/Sailec-Bold.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Sailec Thin';
     src: url('./fonts/Sailec-Thin.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Sailec Medium';
     src: url('./fonts/Sailec-Medium.ttf') format('truetype');
+    font-display: swap;
 }
 
 html {

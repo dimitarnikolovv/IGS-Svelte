@@ -24,7 +24,7 @@
         align-items: center;
         justify-content: center;
         gap: 6rem;
-        padding-block: 3rem;
+        padding-block: 2.5rem;
 
         @media only screen and (max-width: 1080px) {
             padding-block: 0;

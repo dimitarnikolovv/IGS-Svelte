@@ -269,7 +269,6 @@
     section.section-work {
         min-height: fit-content;
         height: fit-content;
-        max-height: 200vh;
         background-color: transparent;
         margin-block-end: 3rem;
         .section-wrapper {
@@ -464,18 +463,17 @@
     }
     @keyframes -global-from-top {
         0% {
-            height: 80%;
             position: absolute;
             left: 50%;
-            top: 0;
+            top: -10%;
             transform: translateY(-100%);
         }
         100% {
             height: 80%;
             position: absolute;
             left: 50%;
-            top: 20%;
-            transform: translateY(0, 0);
+            top: 10%;
+            transform: translateY(0);
         }
     }
 </style>
