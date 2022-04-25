@@ -632,10 +632,10 @@ section.section-work h6 {
     font-family: 'Sailec Regular';
     display: inline-block;
     position: relative;
-    color: var(--clr-primery-700);
+    color: inherit;
 }
 
-.external-link:after {
+.external-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -648,7 +648,7 @@ section.section-work h6 {
     transition: transform 0.25s ease-out;
 }
 
-.external-link:hover:after {
+.external-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }

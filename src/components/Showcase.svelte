@@ -298,7 +298,8 @@
                     }
                 }
 
-                &:hover {
+                &:hover,
+                &:focus {
                     transform: scale(1.03) skew(0deg);
                 }
 

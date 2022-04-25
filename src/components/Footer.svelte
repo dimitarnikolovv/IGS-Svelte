@@ -23,6 +23,10 @@
         justify-content: flex-end;
         gap: 2rem;
 
+        a {
+            color: var(--clr-text-accent-700);
+        }
+
         @media only screen and (max-width: 1080px) {
             width: 100vw;
             position: relative;
