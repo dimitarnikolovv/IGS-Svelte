@@ -1,18 +1,30 @@
 <script>
-    import { images, contactsLocation } from '../stores';
+    import { images, contactsTransitioning } from '../stores';
+    import { onDestroy } from 'svelte';
     import Main from '../components/Main.svelte';
     import Section from '../components/Section.svelte';
     import ContactInfo from '../components/contacts/ContactInfo.svelte';
     import ContactForm from '../components/contacts/ContactForm.svelte';
     import Footer from '../components/Footer.svelte';
+
+    onDestroy(() => {
+        $contactsTransitioning.location = 'countries';
+        $contactsTransitioning.outroEnd.countries = false;
+        $contactsTransitioning.outroEnd.form = true;
+    });
 </script>
 
-<Main overflow={false}>
-    <Section carousel={false} image={$images.covers.contact} sectionLabel="Contacts section">
+<Main overflow={false} contacts={true}>
+    <Section
+        contacts={true}
+        carousel={false}
+        image={$images.covers.contact}
+        sectionLabel="Contacts section"
+    >
         <div class="wrapper">
-            {#if $contactsLocation == 'form'}
+            {#if $contactsTransitioning.location == 'form'}
                 <ContactForm />
-            {:else if $contactsLocation == 'countries'}
+            {:else if $contactsTransitioning.location == 'countries'}
                 <ContactInfo />
             {:else}
                 <p style="color: red">Error!</p>
@@ -98,6 +110,12 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+
+        @media only screen and (max-width: 768px) {
+            flex-direction: row;
+            bottom: 0.5rem;
+            left: calc(50% - 2 * 36px);
+        }
 
         &--link {
             svg {

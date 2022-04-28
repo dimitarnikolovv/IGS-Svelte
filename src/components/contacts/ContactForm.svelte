@@ -1,8 +1,11 @@
 <script>
+    import { contactsTransitioning } from '../../stores';
+    import { init, sendForm } from 'emailjs-com';
     import { fly, fade } from 'svelte/transition';
     import { onMount } from 'svelte';
-    import { contactsLocation } from '../../stores';
     import gsap from 'gsap';
+
+    init('qtPbhq_mzlvFACosT');
 
     onMount(() => {
         const timelineBtnSendHover = gsap.timeline();
@@ -30,6 +33,7 @@
     let hvrOut;
     let hvrBack;
     let hvrBackOut;
+    let outroStarted = false;
 
     let email = '';
     let name = '';
@@ -44,108 +48,140 @@
         subject = '';
     }
 
-    onMount(() => {
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                emailjs.sendForm('contact_service', 'contact_form', this).then(
-                    function () {
-                        sent = true;
-                        clearForm();
-                    },
-                    function (error) {
-                        sent = false;
-                        console.log(error);
-                    }
-                );
+    function sendMessage() {
+        let btn = document.getElementById('btn-submit');
+        let form = document.getElementById('contact-form');
+        btn.disabled = true;
+        sendForm('contact_service', 'contact_form', form)
+            .then(() => {
+                sent = true;
+                clearForm();
+                btn.disabled = false;
+            })
+            .catch((error) => {
+                sent = false;
+                console.log(error);
             });
-            window.scrollTo(0, 0);
-            setTimeout(() => {
-                document.querySelector('body').style.overflowY = 'visible';
-            }, 4700);
-        };
-    });
+    }
 </script>
 
-<form method="post" id="contact-form" in:fade={{ delay: 300 }} out:fly={{ x: -500, duration: 300 }}>
-    <h4>Leave us a message</h4>
-    <label for="name">Enter your name</label>
-    <input id="name" type="text" name="user_name" placeholder="Name" required bind:value={name} />
+{#if $contactsTransitioning.outroEnd.countries}
+    <form
+        on:submit|preventDefault={sendMessage}
+        method="post"
+        id="contact-form"
+        in:fade={{ duration: 300 }}
+        out:fly={{ x: -500, duration: 300 }}
+        on:outroend={() => {
+            $contactsTransitioning.outroEnd.form = true;
+            $contactsTransitioning.outroEnd.countries = false;
+        }}
+        on:outrostart={() => {
+            outroStarted = true;
+        }}
+    >
+        <h4>Leave us a message</h4>
+        <label for="name">Enter your name</label>
+        <input
+            id="name"
+            type="text"
+            name="user_name"
+            placeholder="Name"
+            required={!outroStarted}
+            bind:value={name}
+        />
 
-    <label for="email">Enter your email</label>
-    <input
-        id="email"
-        type="email"
-        name="user_email"
-        placeholder="Email"
-        required
-        bind:value={email}
-    />
+        <label for="email">Enter your email</label>
+        <input
+            id="email"
+            type="email"
+            name="user_email"
+            placeholder="Email"
+            required={!outroStarted}
+            bind:value={email}
+        />
 
-    <label for="subject">Enter the subject</label>
-    <input
-        id="subject"
-        type="text"
-        name="contact_subject"
-        placeholder="Subject"
-        required
-        bind:value={subject}
-    />
+        <label for="subject">Enter the subject</label>
+        <input
+            id="subject"
+            type="text"
+            name="contact_subject"
+            placeholder="Subject"
+            required={!outroStarted}
+            bind:value={subject}
+        />
 
-    <label for="message">Enter yout message</label>
-    <textarea id="message" name="message" placeholder="Write your message" bind:value={message} />
+        <label for="message">Enter yout message</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message"
+            bind:value={message}
+        />
 
-    <div class="btns">
-        <div class="btn-back">
-            <button
-                on:click={() => {
-                    $contactsLocation = 'countries';
-                }}
-                on:mouseenter={hvrBack}
-                on:mouseleave={hvrBackOut}
-            >
-                Back
-                <div class="arrow-back">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                        <path
-                            d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
-                        />
-                    </svg>
-                </div>
-            </button>
-        </div>
-        <div class="btn-submit">
-            <input type="submit" value="Send" on:mouseenter={hvr} on:mouseleave={hvrOut} />
-            {#if sent}
-                <div class="email-sent">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        x="0px"
-                        y="0px"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        style=" fill:#000000;"
-                        ><path
-                            fill="#c8e6c9"
-                            d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
-                        /><path
-                            fill="#4caf50"
-                            d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"
-                        /></svg
-                    >
-                </div>
-            {/if}
-            <div class="arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                    <path
-                        d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
-                    />
-                </svg>
+        <div class="btns">
+            <div class="btn-back">
+                <button
+                    type="button"
+                    on:click={() => {
+                        $contactsTransitioning.location = 'countries';
+                    }}
+                    on:mouseenter={hvrBack}
+                    on:mouseleave={hvrBackOut}
+                >
+                    Back
+                    <div class="arrow-back">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                        >
+                            <path
+                                d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                            />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="btn-submit">
+                <button type="submit" id="btn-submit" on:mouseenter={hvr} on:mouseleave={hvrOut}>
+                    Send
+                    <div class="arrow">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                        >
+                            <path
+                                d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                            />
+                        </svg>
+                    </div>
+                    {#if sent}
+                        <div class="email-sent">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                x="0px"
+                                y="0px"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 48 48"
+                                style=" fill:#000000;"
+                                ><path
+                                    fill="#c8e6c9"
+                                    d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
+                                /><path
+                                    fill="#4caf50"
+                                    d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"
+                                /></svg
+                            >
+                        </div>
+                    {/if}
+                </button>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+{/if}
 
 <style lang="scss">
     form {
@@ -202,6 +238,7 @@
             }
 
             div.btn-back {
+                overflow: hidden;
                 button {
                     position: relative;
                     font-size: 1.2rem;
@@ -232,7 +269,8 @@
 
             div.btn-submit {
                 position: relative;
-                input[type='submit'] {
+                button {
+                    overflow: hidden;
                     font-size: 1.2rem;
                     border: none;
                     color: var(--clr-text-primery-100);
@@ -241,24 +279,29 @@
                     padding-inline: 3em;
                     border-radius: 2em;
                     cursor: pointer;
-                }
 
-                .email-sent {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                }
+                    &:disabled {
+                        background-color: gray;
+                        color: var(--clr-text-accent-900);
+                    }
 
-                .arrow {
-                    position: absolute;
-                    right: 1.2em;
-                    top: 22%;
-                    transition: transform 300ms ease;
-                    svg {
-                        width: 30px;
-                        height: inherit;
-                        path {
-                            fill: var(--clr-text-primery-100);
+                    .email-sent {
+                        position: absolute;
+                        left: -5%;
+                        top: -10%;
+                    }
+
+                    .arrow {
+                        position: absolute;
+                        right: 1em;
+                        top: 22%;
+                        transition: transform 300ms ease;
+                        svg {
+                            width: 30px;
+                            height: inherit;
+                            path {
+                                fill: var(--clr-text-primery-100);
+                            }
                         }
                     }
                 }

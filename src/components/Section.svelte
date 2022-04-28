@@ -9,6 +9,7 @@
     export let carousel = false;
     export let image = '';
     export let gallery = [];
+    export let contacts = false;
 
     export let sectionLabel = '';
 
@@ -17,7 +18,7 @@
 </script>
 
 {#if type === ''}
-    <section aria-label={sectionLabel}>
+    <section aria-label={sectionLabel} class:contacts>
         <div class="section-wrapper">
             {#if showSlider}
                 <div
@@ -138,6 +139,16 @@
         background-color: var(--clr-primery-700);
         overflow: hidden;
         margin-inline: auto;
+
+        &.contacts {
+            @media only screen and (max-width: 768px) {
+                height: fit-content;
+
+                .section-container {
+                    height: 100vh !important;
+                }
+            }
+        }
 
         .section-wrapper {
             display: flex;
