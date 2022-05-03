@@ -5,8 +5,13 @@
     import RealisationsBtn from '../components/RealisationsBtn.svelte';
 </script>
 
+<svelte:head>
+    <title>Home - IGS Production</title>
+</svelte:head>
+
 <Main overflow={false}>
     {#if !$isToggled}
+        <h1 style="position: absolute;">IGS Production Home Page</h1>
         <div class="languages-wrap">
             <span class="active-lang"><a href="/">EN</a></span>
             <span class="lang-spacer">/</span>

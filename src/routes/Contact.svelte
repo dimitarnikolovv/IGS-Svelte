@@ -14,7 +14,12 @@
     });
 </script>
 
+<svelte:head>
+    <title>Contacts - IGS Production</title>
+</svelte:head>
+
 <Main overflow={false} contacts={true}>
+    <h1 style="position: absolute;">Contacts Page</h1>
     <Section
         contacts={true}
         carousel={false}

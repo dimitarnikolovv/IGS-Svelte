@@ -5,7 +5,12 @@
     import { images } from '../stores';
 </script>
 
+<svelte:head>
+    <title>About - IGS Production</title>
+</svelte:head>
+
 <Main>
+    <h1 style="position: absolute; top:8rem;">About our team</h1>
     <Section type="blank" sectionLabel="Meet our team">
         <Showcase />
     </Section>

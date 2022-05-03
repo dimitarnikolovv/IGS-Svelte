@@ -5,7 +5,12 @@
     import { images } from '../stores';
 </script>
 
+<svelte:head>
+    <title>Our Work - IGS Production</title>
+</svelte:head>
+
 <Main>
+    <h1 style="position: absolute; top:8rem;">What we have done</h1>
     <Section
         carousel={true}
         image={$images.projects.project1.images[$images.projects.project1.images.length - 1]}
