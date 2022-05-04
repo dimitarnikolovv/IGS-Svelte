@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../i18n';
     import { images } from '../stores';
 
     const clicked = {
@@ -44,14 +45,14 @@
 </script>
 
 <div class="container">
-    <div style="position: absolute; top: 2rem; z-index: 10; pointer-events: none">
+    <!-- <div style="position: absolute; top: 2rem; z-index: 10; pointer-events: none">
         <p>
             <span class="info-text"
                 >The images are with different color filters. Pay attention on the text and how it
                 looks in front of them to deside which works best for you.</span
             >
         </p>
-    </div>
+    </div> -->
     <ul class="showcase">
         <li
             class="showcase--items"
@@ -63,13 +64,9 @@
         >
             <div class="wrap start" style="background-image: url({$images.people.person1})">
                 <div class="content">
-                    <h4>Norbert Grzechnik</h4>
+                    <h4>{$_('about.team.person1.name')}</h4>
                     <p class:hidden={!clicked.one}>
-                        Norbert loves teamwork, but he also feels like a fish in water alone. He has
-                        knowledge and experience in the industry, he can talk to people and listen
-                        to their needs, and his creativity allows him to create original projects
-                        that accurately match the client's assumptions. He is hardworking, ambitious
-                        and will always lend a helping hand.
+                        {$_('about.team.person1.description')}
                     </p>
                 </div>
             </div>
@@ -84,12 +81,9 @@
         >
             <div class="wrap" style="background-image: url({$images.people.person2})">
                 <div class="content">
-                    <h4>Radosław Frelek</h4>
+                    <h4>{$_('about.team.person2.name')}</h4>
                     <p class:hidden={!clicked.two}>
-                        Radek is great in finances. He creates valuations and budget assumptions for
-                        our clients with closed eyes. He can find money where there is none, and his
-                        cool calculations and entrepreneurial thinking provide safe solutions to the
-                        financial dilemmas of our contractors.
+                        {$_('about.team.person2.description')}
                     </p>
                 </div>
             </div>
@@ -104,12 +98,9 @@
         >
             <div class="wrap" style="background-image: url({$images.people.person3})">
                 <div class="content">
-                    <h4>Aleksandra Zięb</h4>
+                    <h4>{$_('about.team.person3.name')}</h4>
                     <p class:hidden={!clicked.three}>
-                        Ola is a woman focused on work and achieving success. She is meticulous, can
-                        handle difficult and supposedly unsolvable issues, and is always smiling and
-                        ready to help. She drives our entire team with energy and commitment, and
-                        her fresh perspective opens up previously closed gates.
+                        {$_('about.team.person3.description')}
                     </p>
                 </div>
             </div>
@@ -124,13 +115,9 @@
         >
             <div class="wrap" style="background-image: url({$images.people.person4})">
                 <div class="content">
-                    <h4>Igor Grzegorz Suski</h4>
+                    <h4>{$_('about.team.person4.name')}</h4>
                     <p class:hidden={!clicked.four}>
-                        Igor is someone every company would like to have. Hard-working,
-                        conscientious and always willing to act. He is not afraid of the most
-                        difficult challenges posed by our clients, he will always find favorable
-                        solutions. He infects others with his sense of humor and new ideas, and his
-                        projects always end with customer satisfaction.
+                        {$_('about.team.person4.description')}
                     </p>
                 </div>
             </div>
@@ -145,12 +132,9 @@
         >
             <div class="wrap end" style="background-image: url({$images.people.person5})">
                 <div class="content">
-                    <h4>Hanna Sosnowska</h4>
+                    <h4>{$_('about.team.person5.name')}</h4>
                     <p class:hidden={!clicked.five}>
-                        Hanna, thanks to many years of experience in domestic and international
-                        business, is a person ready for anything. Smiling, relaxed, but at the same
-                        time conscientious and always 100% committed to work, she motivates us to
-                        overcome difficulties and develop.
+                        {$_('about.team.person5.description')}
                     </p>
                 </div>
             </div>

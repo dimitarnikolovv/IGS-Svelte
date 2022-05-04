@@ -1,0 +1,51 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Home",
+            "sub-title": "Where is all began"
+        },
+        "about": {
+            "title": "Who we are",
+            "sub-title": "Get to know us better"
+        },
+        "realisations": {
+            "title": "Realisations",
+            "sub-title": "See what we are proud of"
+        },
+        "contact": {
+            "title": "Contact us",
+            "sub-title": "We are waiting for you"
+        }
+    },
+    "home": {
+        "title": "Using new media, we change <span>your ideas</span> into reality!",
+        "realisations_btn": "Our Realisations"
+    },
+    "about": {
+        "team": {
+            "person1": {
+                "name": "Norbert Grzechnik",
+                "description": "Norbert loves teamwork, but he also feels like a fish in water alone. He has knowledge and experience in the industry, he can talk to people and listen to their needs, and his creativity allows him to create original projects that accurately match the client's assumptions. He is hardworking, ambitious and will always lend a helping hand."
+            },
+            "person2": {
+                "name": "Radosław Frelek",
+                "description": "Radek is great in finances. He creates valuations and budget assumptions for our clients with closed eyes. He can find money where there is none, and his cool calculations and entrepreneurial thinking provide safe solutions to the financial dilemmas of our contractors."
+            },
+            "person3": {
+                "name": "Aleksandra Zięb",
+                "description": "Ola is a woman focused on work and achieving success. She is meticulous, can handle difficult and supposedly unsolvable issues, and is always smiling and ready to help. She drives our entire team with energy and commitment, and her fresh perspective opens up previously closed gates."
+            },
+            "person4": {
+                "name": "Igor Grzegorz Suski",
+                "description": "Igor is someone every company would like to have. Hard-working, conscientious and always willing to act. He is not afraid of the most difficult challenges posed by our clients, he will always find favorable solutions. He infects others with his sense of humor and new ideas, and his projects always end with customer satisfaction."
+            },
+            "person5": {
+                "name": "Hanna Sosnowska",
+                "description": "Hanna, thanks to many years of experience in domestic and international business, is a person ready for anything. Smiling, relaxed, but at the same time conscientious and always 100% committed to work, she motivates us to overcome difficulties and develop."
+            }
+        },
+        "section1": "We are a collective of young, <span>creative people</span>. Full of passion and <span>professionalism</span>, as well as <span>perfectionism</span> in the actions taken. We want these features to convince <span>you to cooperate</span> with us. We would like to thank all our existing contractors and we hope that we will always enjoy so much <span>trust from you</span>.",
+        "section2": "Our team is divided into those who work in the office, <span>preparing for your concepts</span>, budgeting and settlements, and a <span>team of planners</span>, bravely carrying out projects in the field. <span>We are not afraid</span> of new challenges, each of which is carried out with <span>attention to the smallest details</span>. Thanks to you, we can <span>constantly develop and improve our skills</span>.",
+        "section3": " Without resting on our laurels, <span>we constantly improve our services</span>, train and increase the technical resources of our equipment so that <span>each subsequent project is our best</span>. Development goes hand in hand with the <span>recruitment of new personalities</span>, so if you think that you can <span>turn an idea into reality</span> just like us - speak up!"
+    }
+}

@@ -1,6 +1,7 @@
 <script>
     import './global.css';
     import { onMount } from 'svelte';
+    import { setUpI18n, isLocaleLoaded } from './i18n';
     import Router from 'svelte-spa-router';
     import routes from './routes';
     import { isToggled } from './stores';
@@ -8,6 +9,10 @@
     import Loader from './components/Loader.svelte';
     import Nav from './components/Nav.svelte';
     import Header from './components/Header.svelte';
+
+    $: if (!$isLocaleLoaded) {
+        setUpI18n({ withLocale: 'en' });
+    }
 
     onMount(() => {
         window.onload = () => {
@@ -35,28 +40,30 @@
     {/if}
 </MediaQuery>
 
-<div class="app-wrapper">
-    <Header />
-    <Nav />
+{#if $isLocaleLoaded}
+    <div class="app-wrapper">
+        <Header />
+        <Nav />
 
-    {#if !$isToggled}
-        <Router {routes} />
-    {/if}
+        {#if !$isToggled}
+            <Router {routes} />
+        {/if}
 
-    <div
-        class="back-to-top"
-        class:show-top-btn={scrollY > 750 ? true : false}
-        on:click={() => {
-            scrollY = 0;
-        }}
-    >
-        <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-            <path
-                d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
-            />
-        </svg>
+        <div
+            class="back-to-top"
+            class:show-top-btn={scrollY > 750 ? true : false}
+            on:click={() => {
+                scrollY = 0;
+            }}
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path
+                    d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
+                />
+            </svg>
+        </div>
     </div>
-</div>
+{/if}
 
 <style lang="scss">
     .app-wrapper {

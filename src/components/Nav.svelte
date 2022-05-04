@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../i18n';
     import { fly } from 'svelte/transition';
     import { isToggled, menuDark } from '../stores';
 
@@ -25,8 +26,8 @@
                     }}
                 >
                     <a class="nav-a" href="/#/" aria-label="Navigation element" on:click={navClick}>
-                        <p class="nav-title">home</p>
-                        <p class="nav-sub-title">Where it all began</p></a
+                        <p class="nav-title">{$_('navigation.home.title')}</p>
+                        <p class="nav-sub-title">{$_('navigation.home.sub-title')}</p></a
                     >
                 </li>
                 <li class="nav-link">
@@ -36,8 +37,8 @@
                         aria-label="Navigation element"
                         on:click={navClick}
                     >
-                        <p class="nav-title">who we are</p>
-                        <p class="nav-sub-title">Get to know us better</p></a
+                        <p class="nav-title">{$_('navigation.about.title')}</p>
+                        <p class="nav-sub-title">{$_('navigation.about.sub-title')}</p></a
                     >
                 </li>
                 <li class="nav-link">
@@ -46,8 +47,8 @@
                         href="/#/realisations"
                         aria-label="Navigation element"
                         on:click={navClick}
-                        ><p class="nav-title">realisations</p>
-                        <p class="nav-sub-title">See what we are proud of</p></a
+                        ><p class="nav-title">{$_('navigation.realisations.title')}</p>
+                        <p class="nav-sub-title">{$_('navigation.realisations.sub-title')}</p></a
                     >
                 </li>
                 <li class="nav-link">
@@ -57,8 +58,8 @@
                         aria-label="Navigation element"
                         on:click={navClick}
                     >
-                        <p class="nav-title">contact us</p>
-                        <p class="nav-sub-title">We are waiting for you</p></a
+                        <p class="nav-title">{$_('navigation.contact.title')}</p>
+                        <p class="nav-sub-title">{$_('navigation.contact.sub-title')}</p></a
                     >
                 </li>
             </ul>
@@ -152,7 +153,7 @@
                         transform: skew(20deg);
 
                         &.nav-title {
-                            font-family: 'Sailec Medium';
+                            font-family: 'Sailec Medium', 'Gilroy';
                             font-size: 1.3rem;
                         }
 

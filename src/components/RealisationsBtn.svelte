@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../i18n';
     import gsap from 'gsap';
     import { onMount } from 'svelte';
 
@@ -25,7 +26,7 @@
 <div class="realizations" on:mouseenter={hvr} on:mouseleave={hvrOut}>
     <div class="realizations--background" />
     <a href="/#/realisations" class="realizations--content">
-        <h4>Our Realisations</h4>
+        <h4>{$_('home.realisations_btn')}</h4>
         <div class="realizations--content--arrow">
             <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                 <path
@@ -63,7 +64,7 @@
 
             h4 {
                 font-size: 1rem;
-                font-family: 'Sailec Thin';
+                font-family: 'Sailec Thin', 'Gilroy';
                 font-weight: 600;
                 text-transform: uppercase;
                 position: absolute;

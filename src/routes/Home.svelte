@@ -1,4 +1,5 @@
 <script>
+    import { _, locale, setUpI18n } from '../i18n';
     import { images, isToggled } from '../stores';
     import Main from '../components/Main.svelte';
     import Section from '../components/Section.svelte';
@@ -13,16 +14,37 @@
     {#if !$isToggled}
         <h1 style="position: absolute;">IGS Production Home Page</h1>
         <div class="languages-wrap">
-            <span class="active-lang"><a href="/">EN</a></span>
+            <span class:active-lang={$locale === 'en'}>
+                <button
+                    type="button"
+                    on:click={() => {
+                        setUpI18n({ withLocale: 'en' });
+                    }}>EN</button
+                >
+            </span>
             <span class="lang-spacer">/</span>
-            <span><a href="/bg">BG</a></span>
+            <span class:active-lang={$locale === 'bg'}>
+                <button
+                    type="button"
+                    on:click={() => {
+                        setUpI18n({ withLocale: 'bg' });
+                    }}>BG</button
+                >
+            </span>
             <span class="lang-spacer">/</span>
-            <span><a href="/pl">PL</a></span>
+            <span class:active-lang={$locale === 'pl'}>
+                <button
+                    type="button"
+                    on:click={() => {
+                        setUpI18n({ withLocale: 'pl' });
+                    }}>PL</button
+                >
+            </span>
         </div>
     {/if}
 
     <Section carousel={false} image={$images.covers.home} sectionLabel="Home section">
-        <h3>Using new media, we change <span>your ideas</span> into reality!</h3>
+        <h3>{@html $_('home.title')}</h3>
     </Section>
 
     {#if !$isToggled}
@@ -58,12 +80,13 @@
                 background-color: var(--clr-accent-600);
             }
 
-            a {
+            button {
+                cursor: pointer;
                 position: relative;
                 color: var(--clr-text-primery-100);
             }
 
-            a::after {
+            button::after {
                 content: '';
                 position: absolute;
                 width: 100%;
@@ -75,7 +98,7 @@
                 transform-origin: bottom right;
                 transition: transform 0.25s ease-out;
             }
-            a:hover {
+            button:hover {
                 &::after {
                     transform: scaleX(1);
                     transform-origin: bottom left;
