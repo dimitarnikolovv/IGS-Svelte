@@ -9,6 +9,7 @@ async function setUpI18n({ withLocale: _locale } = { withLocale: 'en' }) {
     const messages = await response.json();
     dictionary.set({ [_locale]: messages });
     locale.set(_locale);
+    localStorage.setItem('language', _locale);
 }
 
 const isLocaleLoaded = derived(locale, ($locale) => typeof $locale === 'string');

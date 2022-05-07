@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../i18n';
     import Slider from '../components/Slider.svelte';
     import MediaQuery from './MediaQuery.svelte';
     import Saos from 'saos';
@@ -56,7 +57,7 @@
                         >
                             <div class="carousel--badge--background" />
                             <div class="carousel--badge--content">
-                                <h4>See More</h4>
+                                <h4>{$_('realisations.hint_button')}</h4>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill-rule="evenodd"
@@ -415,7 +416,7 @@
                     font-size: 1.4rem;
                     transform: skew(0);
                     text-transform: uppercase;
-                    font-family: 'Sailec Medium';
+                    font-family: 'Sailec Medium', 'Gilroy';
                 }
                 svg {
                     z-index: 1;

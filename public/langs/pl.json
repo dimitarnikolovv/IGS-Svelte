@@ -1,0 +1,162 @@
+{
+    "navigation": {
+        "home": {
+            "title": "",
+            "sub-title": ""
+        },
+        "about": {
+            "title": "",
+            "sub-title": ""
+        },
+        "realisations": {
+            "title": "",
+            "sub-title": ""
+        },
+        "contact": {
+            "title": "",
+            "sub-title": ""
+        }
+    },
+    "home": {
+        "page-title": "",
+        "title": "",
+        "realisations-button": ""
+    },
+    "about": {
+        "page-title": "",
+        "team": {
+            "person1": {
+                "name": "Norbert Grzechnik",
+                "description": ""
+            },
+            "person2": {
+                "name": "Radosław Frelek",
+                "description": ""
+            },
+            "person3": {
+                "name": "Aleksandra Zięb",
+                "description": ""
+            },
+            "person4": {
+                "name": "Igor Grzegorz Suski",
+                "description": ""
+            },
+            "person5": {
+                "name": "Hanna Sosnowska",
+                "description": ""
+            }
+        },
+        "section1": "",
+        "section2": "",
+        "section3": ""
+    },
+    "realisations": {
+        "page-title": "",
+        "hint_button": "",
+        "section1": {
+            "title": "",
+            "project-information": {
+                "about": {
+                    "title": "",
+                    "content": ""
+                },
+                "implementation": {
+                    "title": "",
+                    "content": ""
+                },
+                "ordering-party": {
+                    "title": "",
+                    "content": ""
+                },
+                "link": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        },
+        "section2": {
+            "title": "",
+            "project-information": {
+                "about": {
+                    "title": "",
+                    "content": ""
+                },
+                "implementation": {
+                    "title": "",
+                    "content": ""
+                },
+                "ordering-party": {
+                    "title": "",
+                    "content": ""
+                },
+                "link": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        },
+        "section3": {
+            "title": "",
+            "project-information": {
+                "about": {
+                    "title": "",
+                    "content": ""
+                },
+                "implementation": {
+                    "title": "",
+                    "content": ""
+                },
+                "ordering-party": {
+                    "title": "",
+                    "content": ""
+                },
+                "link": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        },
+        "section4": {
+            "title": "",
+            "project-information": {
+                "about": {
+                    "title": "",
+                    "content": ""
+                },
+                "implementation": {
+                    "title": "",
+                    "content": ""
+                },
+                "ordering-party": {
+                    "title": "",
+                    "content": ""
+                },
+                "link": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        },
+        "section5": {
+            "title": "",
+            "project-information": {
+                "about": {
+                    "title": "",
+                    "content": ""
+                },
+                "implementation": {
+                    "title": "",
+                    "content": ""
+                },
+                "ordering-party": {
+                    "title": "",
+                    "content": ""
+                },
+                "link": {
+                    "title": "",
+                    "content": ""
+                }
+            }
+        }
+    }
+}

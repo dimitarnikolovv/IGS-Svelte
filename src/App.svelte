@@ -10,8 +10,11 @@
     import Nav from './components/Nav.svelte';
     import Header from './components/Header.svelte';
 
+    const lang =
+        localStorage.getItem('language') !== null ? localStorage.getItem('language') : 'en';
+
     $: if (!$isLocaleLoaded) {
-        setUpI18n({ withLocale: 'en' });
+        setUpI18n({ withLocale: lang });
     }
 
     onMount(() => {

@@ -798,7 +798,6 @@ section p.sub-heading span {
 section.section-work p {
     color: var(--clr-text-accent-700);
 }
-
 section.section-work h1,
 section.section-work h2,
 section.section-work h3,
@@ -806,6 +805,23 @@ section.section-work h4,
 section.section-work h5,
 section.section-work h6 {
     color: var(--clr-text-accent-700);
+}
+section.section-work .content-wrap--x:last-child {
+    margin-block-end: 4rem;
+}
+section.section-work .content-wrap--x p {
+    max-width: 90%;
+}
+section.section-work .content-wrap--left p:last-child,
+section.section-work .content-wrap--right p:last-child {
+    margin-block-end: 2rem;
+    width: fit-content;
+}
+
+@media only screen and (max-width: 768px) {
+    section.section-work .content-wrap--x:first-child {
+        margin-block-end: 0;
+    }
 }
 
 .external-link {

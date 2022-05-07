@@ -187,12 +187,12 @@
                     flex-direction: column;
                     align-items: center;
                     gap: 1rem;
-                    width: 20%;
+                    width: 25%;
                     transition: width 200ms ease-in;
                     // background-color: rgba(0, 0, 0, 0.5);
 
                     h4 {
-                        font-family: 'Sailec Bold';
+                        font-family: 'Sailec Bold', 'Gilroy';
                     }
 
                     p {
@@ -208,12 +208,14 @@
 
                 &.start {
                     .content {
+                        width: 20%;
                         padding-inline-start: 17%;
                     }
                 }
 
                 &.end {
                     .content {
+                        width: 18%;
                         padding-inline-end: 6%;
                     }
                 }
@@ -264,20 +266,20 @@
                     height: 100%;
 
                     .content {
-                        width: 20%;
+                        width: 100%;
                     }
 
                     &.start {
                         .content {
                             padding-inline-start: 0;
-                            width: 20%;
+                            width: 100%;
                         }
                     }
 
                     &.end {
                         .content {
                             padding-inline-end: 0;
-                            width: 20%;
+                            width: 100%;
                         }
                     }
                 }

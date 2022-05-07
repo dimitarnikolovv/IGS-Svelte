@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-    <title>About - IGS Production</title>
+    <title>{$_('about.page-title')}</title>
 </svelte:head>
 
 <Main>

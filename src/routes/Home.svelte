@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-    <title>Home - IGS Production</title>
+    <title>{$_('home.page-title')}</title>
 </svelte:head>
 
 <Main overflow={false}>

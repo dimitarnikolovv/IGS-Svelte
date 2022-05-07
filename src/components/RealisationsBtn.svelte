@@ -26,7 +26,7 @@
 <div class="realizations" on:mouseenter={hvr} on:mouseleave={hvrOut}>
     <div class="realizations--background" />
     <a href="/#/realisations" class="realizations--content">
-        <h4>{$_('home.realisations_btn')}</h4>
+        <h4>{$_('home.realisations-button')}</h4>
         <div class="realizations--content--arrow">
             <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                 <path
