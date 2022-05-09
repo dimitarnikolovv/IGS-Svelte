@@ -158,5 +158,29 @@
                 }
             }
         }
+    },
+    "contact": {
+        "page-title": "Контакти - IGS Production",
+        "title": "Вижте инормация за нас в {targetCountry}",
+        "poland": "Полша",
+        "bulgaria": "България",
+        "tel": "Тел:",
+        "email": "Имейл:",
+        "address": "Адрес:",
+        "contact-button": "Свържете се с нас",
+        "form": {
+            "title": "Оставете ни съобщение",
+            "name": "Вашето име",
+            "name-label": "Въведете вашето име",
+            "email": "Вашият имейл",
+            "email-label": "Въведете вашия имейл",
+            "subject": "Тема",
+            "subject-label": "Въведете тема",
+            "message": "Напишете вашето съобщение",
+            "message-label": "Напишете вашето съобщение",
+            "back-button": "Назад",
+            "send-button": "Изпрати"
+        },
+        "footer": "<p class=\"info-text\">Всички права запазени {currYear}. IGS Production &copy;.</p> <p class=\"info-text\"> Направено с любов от <a href=\"https://infrablu.xyz\" class=\"external-link\" target=\"blank\">InfraBlu</a >. </p>"
     }
 }

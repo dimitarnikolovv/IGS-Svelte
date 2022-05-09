@@ -158,5 +158,29 @@
                 }
             }
         }
+    },
+    "contact": {
+        "page-title": " - IGS Production",
+        "title": " ",
+        "poland": "",
+        "bulgaria": "",
+        "tel": "",
+        "email": "",
+        "address": "",
+        "contact-button": "",
+        "form": {
+            "title": "",
+            "name": "",
+            "name-label": "",
+            "email": "",
+            "email-label": "",
+            "subject": "",
+            "subject-label": "",
+            "message": "",
+            "message-label": "",
+            "back-button": "",
+            "send-button": ""
+        },
+        "footer": "<p class=\"info-text\"> {currYear}. IGS Production &copy;.</p> <p class=\"info-text\">  <a href=\"https://infrablu.xyz\" class=\"external-link\" target=\"blank\">InfraBlu</a >. </p>"
     }
 }

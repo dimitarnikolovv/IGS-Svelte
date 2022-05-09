@@ -853,3 +853,7 @@ section.section-work .content-wrap--right p:last-child {
     font-family: 'Sailec Thin', 'Gilroy';
     font-style: italic;
 }
+
+.info-text a {
+    color: var(--clr-text-accent-700);
+}

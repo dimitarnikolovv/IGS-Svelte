@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../../i18n';
     import { fly, fade } from 'svelte/transition';
     import { onMount } from 'svelte';
     import { contactsTransitioning } from '../../stores';
@@ -60,17 +61,17 @@
             >
                 <ul class="contacts">
                     <li>
-                        <span class="info">Tel: </span>
+                        <span class="info">{$_('contact.tel')} </span>
                         <a class="contacts-link" href="tel:+48694091229"> +48 694 091 229 </a>
                     </li>
                     <li>
-                        <span class="info">Email: </span>
+                        <span class="info">{$_('contact.email')} </span>
                         <a class="contacts-link" href="mailto:biuro@igsproduction.com">
                             biuro@igsproduction.com
                         </a>
                     </li>
                     <li>
-                        <span class="info"> Address: </span>
+                        <span class="info">{$_('contact.address')} </span>
                         <address>
                             <a
                                 class="contacts-link"
@@ -85,7 +86,16 @@
                     </li>
                 </ul>
                 <div class="btn-country-wrapper">
-                    <h4>See our contact info for {country == 'Poland' ? 'Bulgaria' : 'Poland'}</h4>
+                    <h4>
+                        {$_('contact.title', {
+                            values: {
+                                targetCountry:
+                                    country == 'Poland'
+                                        ? $_('contact.bulgaria')
+                                        : $_('contact.poland'),
+                            },
+                        })}
+                    </h4>
                     <button
                         class="btn-country"
                         on:click={() => {
@@ -94,7 +104,7 @@
                         on:mouseenter={hvrCntry}
                         on:mouseleave={hvrCntryOut}
                     >
-                        {country == 'Poland' ? 'Bulgaria' : 'Poland'}
+                        {country == 'Poland' ? $_('contact.bulgaria') : $_('contact.poland')}
                         <div class="arrow-country">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -133,17 +143,17 @@
             >
                 <ul class="contacts">
                     <li>
-                        <span class="info">Tel: </span>
+                        <span class="info">{$_('contact.tel')} </span>
                         <a class="contacts-link" href="tel:+48694091229"> +356 000 000 000 </a>
                     </li>
                     <li>
-                        <span class="info">Email: </span>
+                        <span class="info">{$_('contact.email')} </span>
                         <a class="contacts-link" href="mailto:biuro@igsproduction.com">
                             biuro@igsproduction.com
                         </a>
                     </li>
                     <li>
-                        <span class="info"> Address: </span>
+                        <span class="info">{$_('contact.address')} </span>
                         <address>
                             <a
                                 class="contacts-link"
@@ -158,7 +168,16 @@
                     </li>
                 </ul>
                 <div class="btn-country-wrapper">
-                    <h4>See our contact info for {country == 'Poland' ? 'Bulgaria' : 'Poland'}</h4>
+                    <h4>
+                        {$_('contact.title', {
+                            values: {
+                                targetCountry:
+                                    country == 'Poland'
+                                        ? $_('contact.bulgaria')
+                                        : $_('contact.poland'),
+                            },
+                        })}
+                    </h4>
                     <button
                         class="btn-country"
                         on:click={() => {
@@ -167,7 +186,7 @@
                         on:mouseenter={hvrCntry}
                         on:mouseleave={hvrCntryOut}
                     >
-                        {country == 'Poland' ? 'Bulgaria' : 'Poland'}
+                        {country == 'Poland' ? $_('contact.bulgaria') : $_('contact.poland')}
                         <div class="arrow-country">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +221,7 @@
             on:mouseenter={hvr}
             on:mouseleave={hvrOut}
         >
-            Contact us
+            {$_('contact.contact-button')}
             <div class="arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path

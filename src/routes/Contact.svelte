@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../i18n';
     import { images, contactsTransitioning } from '../stores';
     import { onDestroy } from 'svelte';
     import Main from '../components/Main.svelte';
@@ -15,7 +16,7 @@
 </script>
 
 <svelte:head>
-    <title>Contacts - IGS Production</title>
+    <title>{$_('contact.page-title')}</title>
 </svelte:head>
 
 <Main overflow={false} contacts={true}>

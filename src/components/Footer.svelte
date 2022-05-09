@@ -1,17 +1,11 @@
+<script>
+    import { _ } from '../i18n';
+
+    const year = new Date().getFullYear();
+</script>
+
 <footer>
-    <div class="copyright">
-        <p class="info-text">
-            All rights reserved. IGS Production <span data-cr-year /> &copy;.
-        </p>
-    </div>
-    <div class="made-by">
-        <p class="info-text">
-            Made with love by
-            <a href="https://infrablu.xyz" class="external-link" data-no-swup target="blank"
-                >InfraBlu</a
-            >.
-        </p>
-    </div>
+    {@html $_('contact.footer', { values: { currYear: year } })}
 </footer>
 
 <style lang="scss">
@@ -22,10 +16,6 @@
         display: flex;
         justify-content: flex-end;
         gap: 2rem;
-
-        a {
-            color: var(--clr-text-accent-700);
-        }
 
         @media only screen and (max-width: 1080px) {
             width: 100vw;

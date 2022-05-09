@@ -1,4 +1,5 @@
 <script>
+    import { _ } from '../../i18n';
     import { contactsTransitioning } from '../../stores';
     import { init, sendForm } from 'emailjs-com';
     import { fly, fade } from 'svelte/transition';
@@ -80,42 +81,42 @@
             outroStarted = true;
         }}
     >
-        <h4>Leave us a message</h4>
-        <label for="name">Enter your name</label>
+        <h4>{$_('contact.form.title')}</h4>
+        <label for="name">{$_('contact.form.name-label')}</label>
         <input
             id="name"
             type="text"
             name="user_name"
-            placeholder="Name"
+            placeholder={$_('contact.form.name')}
             required={!outroStarted}
             bind:value={name}
         />
 
-        <label for="email">Enter your email</label>
+        <label for="email">{$_('contact.form.email-label')}</label>
         <input
             id="email"
             type="email"
             name="user_email"
-            placeholder="Email"
+            placeholder={$_('contact.form.email')}
             required={!outroStarted}
             bind:value={email}
         />
 
-        <label for="subject">Enter the subject</label>
+        <label for="subject">{$_('contact.form.subject-label')}</label>
         <input
             id="subject"
             type="text"
             name="contact_subject"
-            placeholder="Subject"
+            placeholder={$_('contact.form.subject')}
             required={!outroStarted}
             bind:value={subject}
         />
 
-        <label for="message">Enter yout message</label>
+        <label for="message">{$_('contact.form.message-label')}</label>
         <textarea
             id="message"
             name="message"
-            placeholder="Write your message"
+            placeholder={$_('contact.form.message')}
             bind:value={message}
         />
 
@@ -129,7 +130,7 @@
                     on:mouseenter={hvrBack}
                     on:mouseleave={hvrBackOut}
                 >
-                    Back
+                    {$_('contact.form.back-button')}
                     <div class="arrow-back">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +146,7 @@
             </div>
             <div class="btn-submit">
                 <button type="submit" id="btn-submit" on:mouseenter={hvr} on:mouseleave={hvrOut}>
-                    Send
+                    {$_('contact.form.send-button')}
                     <div class="arrow">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
