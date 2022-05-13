@@ -320,7 +320,7 @@
                     width: 20px;
                     height: 2px;
                     bottom: -8px;
-                    transform: rotate(-60deg) translate(10px, -10px);
+                    transform: rotate(-60deg) translate(50%, -515%);
                 }
                 &::before {
                     content: '';
@@ -329,7 +329,7 @@
                     width: 20px;
                     height: 2px;
                     bottom: 2px;
-                    transform: rotate(60deg) translate(-10px, 10px);
+                    transform: rotate(60deg) translate(-50%, 515%);
                 }
             }
         }

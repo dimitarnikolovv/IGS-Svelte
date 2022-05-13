@@ -63,10 +63,10 @@
             align-items: center;
 
             h4 {
-                font-size: 1rem;
-                font-family: 'Sailec Thin', 'Gilroy';
+                font-size: 1.2rem;
+                font-family: 'Sailec Normal', 'Gilroy';
                 font-weight: 600;
-                text-transform: uppercase;
+                // text-transform: uppercase;
                 position: absolute;
                 color: var(--clr-text-primery-100);
             }

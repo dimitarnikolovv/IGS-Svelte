@@ -43,7 +43,6 @@ export const images = readable({
                 './images/projects/project3/image5.webp',
                 './images/projects/project3/image6.webp',
                 './images/projects/project3/image7.webp',
-                './images/projects/project3/image8.webp',
             ],
         },
         project4: {

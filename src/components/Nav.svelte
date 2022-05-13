@@ -231,5 +231,16 @@
                 }
             }
         }
+        @media only screen and (max-width: 768px) {
+            ul {
+                position: relative;
+                bottom: initial;
+                margin-block: auto;
+                height: 80%;
+                flex-direction: column;
+                background: transparent;
+                transform: skew(0);
+            }
+        }
     }
 </style>

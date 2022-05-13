@@ -10,7 +10,7 @@
         five: false,
     };
 
-    function clerClicks(person = 0) {
+    function clearClicks(person = 0) {
         if (person === 1) {
             clicked.two = false;
             clicked.three = false;
@@ -45,98 +45,80 @@
 </script>
 
 <div class="container">
-    <!-- <div style="position: absolute; top: 2rem; z-index: 10; pointer-events: none">
-        <p>
-            <span class="info-text"
-                >The images are with different color filters. Pay attention on the text and how it
-                looks in front of them to deside which works best for you.</span
-            >
-        </p>
-    </div> -->
     <ul class="showcase">
         <li
             class="showcase--items"
             class:on-click={clicked.one}
             on:click={() => {
-                clerClicks(1);
+                clearClicks(1);
                 clicked.one = !clicked.one;
             }}
         >
             <div class="wrap start" style="background-image: url({$images.people.person1})">
-                <div class="content">
-                    <h4>{$_('about.team.person1.name')}</h4>
-                    <p class:hidden={!clicked.one}>
-                        {$_('about.team.person1.description')}
-                    </p>
-                </div>
+                <h4>{$_('about.team.person1.name')}</h4>
+                <p class:hidden={!clicked.one}>
+                    {$_('about.team.person1.description')}
+                </p>
             </div>
         </li>
         <li
             class="showcase--items"
             class:on-click={clicked.two}
             on:click={() => {
-                clerClicks(2);
+                clearClicks(2);
                 clicked.two = !clicked.two;
             }}
         >
             <div class="wrap" style="background-image: url({$images.people.person2})">
-                <div class="content">
-                    <h4>{$_('about.team.person2.name')}</h4>
-                    <p class:hidden={!clicked.two}>
-                        {$_('about.team.person2.description')}
-                    </p>
-                </div>
+                <h4>{$_('about.team.person2.name')}</h4>
+                <p class:hidden={!clicked.two}>
+                    {$_('about.team.person2.description')}
+                </p>
             </div>
         </li>
         <li
             class="showcase--items"
             class:on-click={clicked.three}
             on:click={() => {
-                clerClicks(3);
+                clearClicks(3);
                 clicked.three = !clicked.three;
             }}
         >
             <div class="wrap" style="background-image: url({$images.people.person3})">
-                <div class="content">
-                    <h4>{$_('about.team.person3.name')}</h4>
-                    <p class:hidden={!clicked.three}>
-                        {$_('about.team.person3.description')}
-                    </p>
-                </div>
+                <h4>{$_('about.team.person3.name')}</h4>
+                <p class:hidden={!clicked.three}>
+                    {$_('about.team.person3.description')}
+                </p>
             </div>
         </li>
         <li
             class="showcase--items"
             class:on-click={clicked.four}
             on:click={() => {
-                clerClicks(4);
+                clearClicks(4);
                 clicked.four = !clicked.four;
             }}
         >
             <div class="wrap" style="background-image: url({$images.people.person4})">
-                <div class="content">
-                    <h4>{$_('about.team.person4.name')}</h4>
-                    <p class:hidden={!clicked.four}>
-                        {$_('about.team.person4.description')}
-                    </p>
-                </div>
+                <h4>{$_('about.team.person4.name')}</h4>
+                <p class:hidden={!clicked.four}>
+                    {$_('about.team.person4.description')}
+                </p>
             </div>
         </li>
         <li
             class="showcase--items"
             class:on-click={clicked.five}
             on:click={() => {
-                clerClicks(5);
+                clearClicks(5);
                 clicked.five = !clicked.five;
             }}
         >
             <div class="wrap end" style="background-image: url({$images.people.person5})">
-                <div class="content">
-                    <h4>{$_('about.team.person5.name')}</h4>
-                    <p class:hidden={!clicked.five}>
-                        {$_('about.team.person5.description')}
-                    </p>
-                </div>
+                <h4>{$_('about.team.person5.name')}</h4>
+                <p class:hidden={!clicked.five}>
+                    {$_('about.team.person5.description')}
+                </p>
             </div>
         </li>
     </ul>
@@ -176,45 +158,45 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: all 200ms ease-in-out;
 
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
 
-                .content {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 1rem;
-                    width: 25%;
-                    transition: width 200ms ease-in;
-                    // background-color: rgba(0, 0, 0, 0.5);
+                h4 {
+                    width: fit-content;
+                    max-width: 25%;
+                    font-family: 'Sailec Bold', 'Gilroy';
+                    transition: transform 100ms 230ms ease-in;
+                }
 
-                    h4 {
-                        font-family: 'Sailec Bold', 'Gilroy';
+                p {
+                    position: absolute;
+                    transition: opacity 200ms 400ms ease-in;
+
+                    @media only screen and (max-width: 420px) {
+                        bottom: 10%;
                     }
 
-                    p {
-                        transition: opacity 200ms 400ms ease-in;
-                    }
-
-                    .hidden {
-                        opacity: 0;
-                        position: absolute;
-                        transition: opacity 0ms 0ms ease-in;
+                    @media only screen and (max-width: 365px) {
+                        bottom: 0.5rem;
                     }
                 }
 
+                .hidden {
+                    opacity: 0;
+                    transition: opacity 0ms ease-in;
+                }
+
                 &.start {
-                    .content {
+                    h4 {
                         width: 20%;
                         padding-inline-start: 17%;
                     }
                 }
 
                 &.end {
-                    .content {
+                    h4 {
                         width: 18%;
                         padding-inline-end: 6%;
                     }
@@ -231,19 +213,34 @@
                     align-items: center;
                     padding-block-start: 0;
                     padding-inline-start: 0;
-                    .content {
-                        width: 60%;
+
+                    h4 {
+                        max-width: fit-content;
+                        transform: translateY(-7rem);
                     }
 
+                    p {
+                        width: 60%;
+                    }
                     &.start {
-                        .content {
-                            padding-inline-start: 15%;
-                            width: 45%;
+                        h4 {
+                            max-width: fit-content;
+                            width: fit-content;
+                            padding-inline-start: 0;
+                        }
+                        p {
+                            padding-inline-start: 12%;
+                            width: 48%;
                         }
                     }
 
                     &.end {
-                        .content {
+                        h4 {
+                            max-width: fit-content;
+                            width: fit-content;
+                            padding-inline-end: 0;
+                        }
+                        p {
                             padding-inline-end: 10%;
                             width: 50%;
                         }
@@ -265,21 +262,22 @@
                     width: 100vw;
                     height: 100%;
 
-                    .content {
-                        width: 100%;
+                    h4 {
+                        max-width: 100%;
+                        transition: transform 100ms 0ms ease-in;
                     }
 
                     &.start {
-                        .content {
+                        h4 {
+                            width: fit-content;
                             padding-inline-start: 0;
-                            width: 100%;
                         }
                     }
 
                     &.end {
-                        .content {
+                        h4 {
+                            width: fit-content;
                             padding-inline-end: 0;
-                            width: 100%;
                         }
                     }
                 }
@@ -294,19 +292,19 @@
                     width: 100%;
 
                     div.wrap {
-                        .content {
+                        p {
                             width: 80%;
                         }
 
                         &.start {
-                            .content {
+                            p {
                                 padding-inline-start: 0;
                                 width: 80%;
                             }
                         }
 
                         &.end {
-                            .content {
+                            p {
                                 padding-inline-end: 0;
                                 width: 80%;
                             }
