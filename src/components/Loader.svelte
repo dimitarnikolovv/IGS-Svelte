@@ -20,6 +20,7 @@
 
 <div class="loader">
     <video class="loader-logo" autoplay muted playsinline preload="metadata">
+        <source src="./images/logo.mov" type="video/mp4" />
         <source src="./images/logo.webm" type="video/webm" />
         Your browser does not support the video tag.
     </video>

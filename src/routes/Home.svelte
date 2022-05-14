@@ -44,7 +44,10 @@
     {/if}
 
     <Section carousel={false} image={$images.covers.home} sectionLabel="Home section">
-        <h3>{@html $_('home.title')}</h3>
+        <h3 style="opacity: 0; position: absolute">{@html $_('home.title')}</h3>
+        <div class="text-animation-wrap">
+            <img src={$_('home.animation-path')} alt="" />
+        </div>
     </Section>
 
     {#if !$isToggled}
@@ -55,6 +58,17 @@
 <style lang="scss">
     h3 {
         text-align: right;
+    }
+
+    .text-animation-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+        }
     }
 
     .languages-wrap {

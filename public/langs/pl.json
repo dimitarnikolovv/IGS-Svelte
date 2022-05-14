@@ -20,6 +20,7 @@
     "home": {
         "page-title": "",
         "title": "",
+        "animation-path": "./images/text/home/home-pl.gif",
         "realisations-button": ""
     },
     "about": {

@@ -20,6 +20,7 @@
     "home": {
         "page-title": "Home - IGS Production",
         "title": "Using new media, we change <span>your ideas</span> into reality!",
+        "animation-path": "./images/text/home/home-en.gif",
         "realisations-button": "Our Realisations"
     },
     "about": {

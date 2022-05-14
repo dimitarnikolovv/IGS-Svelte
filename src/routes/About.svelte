@@ -31,3 +31,9 @@
         </p>
     </Section>
 </Main>
+
+<style lang="scss">
+    p {
+        font-size: 1.1rem;
+    }
+</style>

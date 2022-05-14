@@ -20,6 +20,7 @@
     "home": {
         "page-title": "Начало - IGS Production",
         "title": "Използвайки нова медия, ние превръщаме <span>вашите идеи</span> в реалност!",
+        "animation-path": "./images/text/home/home-bg.gif",
         "realisations-button": "Нашите проекти"
     },
     "about": {

@@ -231,6 +231,10 @@
                         p {
                             padding-inline-start: 12%;
                             width: 48%;
+
+                            @media only screen and (max-width: 490px) {
+                                bottom: 5%;
+                            }
                         }
                     }
 
@@ -294,12 +298,18 @@
                     div.wrap {
                         p {
                             width: 80%;
+                            @media only screen and (max-width: 424px) {
+                                width: 90%;
+                            }
                         }
 
                         &.start {
                             p {
                                 padding-inline-start: 0;
                                 width: 80%;
+                                @media only screen and (max-width: 424px) {
+                                    width: 90%;
+                                }
                             }
                         }
 
@@ -307,6 +317,9 @@
                             p {
                                 padding-inline-end: 0;
                                 width: 80%;
+                                @media only screen and (max-width: 424px) {
+                                    width: 90%;
+                                }
                             }
                         }
                     }
