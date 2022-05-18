@@ -1,10 +1,10 @@
 <script>
     import './global.css';
     import { onMount } from 'svelte';
-    import { setUpI18n, isLocaleLoaded } from './i18n';
+    import { setUpI18n, isLocaleLoaded } from './lib/i18n';
     import Router from 'svelte-spa-router';
-    import routes from './routes';
-    import { isToggled } from './stores';
+    import routes from './lib/routes';
+    import { isToggled, isInForm } from './lib/stores';
     import MediaQuery from './components/MediaQuery.svelte';
     import Loader from './components/Loader.svelte';
     import Nav from './components/Nav.svelte';
@@ -34,7 +34,7 @@
 <Loader />
 
 <MediaQuery query="(max-width: 940px) and (max-height: 430px)" let:matches>
-    {#if matches}
+    {#if matches && !$isInForm}
         <div class="rotate-phone">
             <div class="rotate-wrap">
                 <h3>Please, rotate your phone :)</h3>

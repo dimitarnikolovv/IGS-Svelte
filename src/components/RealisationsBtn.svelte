@@ -1,5 +1,5 @@
 <script>
-    import { _ } from '../i18n';
+    import { _ } from '../lib/i18n';
     import gsap from 'gsap';
     import { onMount } from 'svelte';
 

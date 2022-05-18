@@ -1,7 +1,7 @@
 <script>
-    import { _ } from '../i18n';
+    import { _ } from '../lib/i18n';
     import { fly } from 'svelte/transition';
-    import { isToggled, menuDark } from '../stores';
+    import { isToggled, menuDark } from '../lib/stores';
 
     function navClick() {
         $isToggled = false;

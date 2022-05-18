@@ -1,9 +1,9 @@
 <script>
-    import { _ } from '../i18n';
+    import { _ } from '../lib/i18n';
     import Section from '../components/Section.svelte';
     import Main from '../components/Main.svelte';
     import Showcase from '../components/Showcase.svelte';
-    import { images } from '../stores';
+    import { images } from '../lib/stores';
 </script>
 
 <svelte:head>

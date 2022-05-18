@@ -1,5 +1,5 @@
 <script>
-    import { isToggled, menuDark, darkenMenu } from '../stores';
+    import { isToggled, menuDark, darkenMenu } from '../lib/stores';
 
     function changeToggled() {
         $isToggled = !$isToggled;

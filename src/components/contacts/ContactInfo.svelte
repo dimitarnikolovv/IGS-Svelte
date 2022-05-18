@@ -1,8 +1,8 @@
 <script>
-    import { _ } from '../../i18n';
+    import { _ } from '../../lib/i18n';
     import { fly, fade } from 'svelte/transition';
     import { onMount } from 'svelte';
-    import { contactsTransitioning } from '../../stores';
+    import { contactsTransitioning } from '../../lib/stores';
     import gsap from 'gsap';
 
     onMount(() => {
@@ -32,6 +32,12 @@
     let hvrCntry;
     let hvrCntryOut;
     let country = 'Poland';
+
+    let matchesMedia = window.matchMedia('(min-width: 606px)');
+
+    window.addEventListener('resize', () => {
+        matchesMedia = window.matchMedia('(min-width: 606px)');
+    });
 
     const outrosEnd = {
         poland: false,
@@ -85,7 +91,64 @@
                         </address>
                     </li>
                 </ul>
-                <div class="btn-country-wrapper">
+
+                {#if matchesMedia.matches}
+                    <div class="btn-country-wrapper">
+                        <h4>
+                            {$_('contact.title', {
+                                values: {
+                                    targetCountry:
+                                        country == 'Poland'
+                                            ? $_('contact.bulgaria')
+                                            : $_('contact.poland'),
+                                },
+                            })}
+                        </h4>
+                        <button
+                            class="btn-country"
+                            on:click={() => {
+                                country = country == 'Poland' ? 'Bulgaria' : 'Poland';
+                            }}
+                            on:mouseenter={hvrCntry}
+                            on:mouseleave={hvrCntryOut}
+                        >
+                            {country == 'Poland' ? $_('contact.bulgaria') : $_('contact.poland')}
+                            <div class="arrow-country">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                >
+                                    <path
+                                        d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                                    />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                {/if}
+            </div>
+            <iframe
+                in:fade={{ duration: 400 }}
+                out:fly={{ x: 100, duration: 200 }}
+                title="Our location in {country}"
+                width="600"
+                height="400"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.7036492997698!2d21.137907494663!3d52.23869022782944!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ed21282c2f4e5%3A0xea1747c029c6c40!2zR2_FumR6aWvDs3cgMjcsIDA0LTIzMSBXYXJzemF3YSwg0J_QvtC70YjQsA!5e0!3m2!1sbg!2sbg!4v1644875164418!5m2!1sbg!2sbg"
+                style="border:0"
+                allowfullscreen
+            />
+
+            {#if !matchesMedia.matches}
+                <div
+                    class="btn-country-wrapper-mobile"
+                    in:fade={{ duration: 400 }}
+                    out:fly={{ x: 100, duration: 200 }}
+                    on:outroend={() => {
+                        outrosEnd.poland = true;
+                        outrosEnd.bulgaria = false;
+                    }}
+                >
                     <h4>
                         {$_('contact.title', {
                             values: {
@@ -118,17 +181,7 @@
                         </div>
                     </button>
                 </div>
-            </div>
-            <iframe
-                in:fade={{ duration: 400 }}
-                out:fly={{ x: 100, duration: 200 }}
-                title="Our location in {country}"
-                width="600"
-                height="400"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.7036492997698!2d21.137907494663!3d52.23869022782944!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ed21282c2f4e5%3A0xea1747c029c6c40!2zR2_FumR6aWvDs3cgMjcsIDA0LTIzMSBXYXJzemF3YSwg0J_QvtC70YjQsA!5e0!3m2!1sbg!2sbg!4v1644875164418!5m2!1sbg!2sbg"
-                style="border:0"
-                allowfullscreen
-            />
+            {/if}
         {/if}
 
         {#if country == 'Bulgaria' && outrosEnd.poland}
@@ -167,7 +220,62 @@
                         </address>
                     </li>
                 </ul>
-                <div class="btn-country-wrapper">
+                {#if matchesMedia.matches}
+                    <div class="btn-country-wrapper">
+                        <h4>
+                            {$_('contact.title', {
+                                values: {
+                                    targetCountry:
+                                        country == 'Poland'
+                                            ? $_('contact.bulgaria')
+                                            : $_('contact.poland'),
+                                },
+                            })}
+                        </h4>
+                        <button
+                            class="btn-country"
+                            on:click={() => {
+                                country = country == 'Poland' ? 'Bulgaria' : 'Poland';
+                            }}
+                            on:mouseenter={hvrCntry}
+                            on:mouseleave={hvrCntryOut}
+                        >
+                            {country == 'Poland' ? $_('contact.bulgaria') : $_('contact.poland')}
+                            <div class="arrow-country">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                >
+                                    <path
+                                        d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                                    />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                {/if}
+            </div>
+            <iframe
+                in:fade={{ duration: 400 }}
+                out:fly={{ x: 100, duration: 200 }}
+                title="Our location in {country}"
+                width="600"
+                height="400"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d871.8283247972486!2d23.32691186681162!3d42.69378379607549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa856e0bf1bb6d%3A0x36725da11aa21a6c!2zMTAwMCDQodC-0YTQuNGPINGG0LXQvdGC0YrRgCwg0KHQvtGE0LjRjw!5e0!3m2!1sbg!2sbg!4v1651091027836!5m2!1sbg!2sbg"
+                style="border:0"
+                allowfullscreen
+            />
+            {#if !matchesMedia.matches}
+                <div
+                    class="btn-country-wrapper-mobile"
+                    in:fade={{ duration: 400 }}
+                    out:fly={{ x: 100, duration: 200 }}
+                    on:outroend={() => {
+                        outrosEnd.bulgaria = true;
+                        outrosEnd.poland = false;
+                    }}
+                >
                     <h4>
                         {$_('contact.title', {
                             values: {
@@ -200,17 +308,7 @@
                         </div>
                     </button>
                 </div>
-            </div>
-            <iframe
-                in:fade={{ duration: 400 }}
-                out:fly={{ x: 100, duration: 200 }}
-                title="Our location in {country}"
-                width="600"
-                height="400"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d871.8283247972486!2d23.32691186681162!3d42.69378379607549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa856e0bf1bb6d%3A0x36725da11aa21a6c!2zMTAwMCDQodC-0YTQuNGPINGG0LXQvdGC0YrRgCwg0KHQvtGE0LjRjw!5e0!3m2!1sbg!2sbg!4v1651091027836!5m2!1sbg!2sbg"
-                style="border:0"
-                allowfullscreen
-            />
+            {/if}
         {/if}
 
         <button
@@ -287,7 +385,38 @@
             flex-direction: column;
             gap: 1.5rem;
             width: 100%;
+
+            button.btn-country {
+                overflow: hidden;
+                font-size: 1.3rem;
+                position: relative;
+                color: var(--clr-text-primery-100);
+                width: fit-content;
+                padding-inline-end: 2.5em;
+                cursor: pointer;
+
+                .arrow-country {
+                    position: absolute;
+                    right: 0.6em;
+                    top: 0;
+                    transition: transform 300ms ease;
+                    svg {
+                        width: 30px;
+                        height: inherit;
+                        path {
+                            fill: var(--clr-text-primery-100);
+                        }
+                    }
+                }
+            }
         }
+    }
+
+    div.btn-country-wrapper-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: fit-content;
 
         button.btn-country {
             overflow: hidden;

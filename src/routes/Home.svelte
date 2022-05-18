@@ -1,6 +1,6 @@
 <script>
-    import { _, locale, setUpI18n } from '../i18n';
-    import { images, isToggled } from '../stores';
+    import { _, locale, setUpI18n } from '../lib/i18n';
+    import { images, isToggled } from '../lib/stores';
     import Main from '../components/Main.svelte';
     import Section from '../components/Section.svelte';
     import RealisationsBtn from '../components/RealisationsBtn.svelte';

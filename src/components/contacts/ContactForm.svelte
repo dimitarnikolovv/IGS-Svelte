@@ -1,9 +1,9 @@
 <script>
-    import { _ } from '../../i18n';
-    import { contactsTransitioning } from '../../stores';
+    import { _ } from '../../lib/i18n';
+    import { contactsTransitioning, isInForm } from '../../lib/stores';
     import { init, sendForm } from 'emailjs-com';
     import { fly, fade } from 'svelte/transition';
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import gsap from 'gsap';
 
     init('qtPbhq_mzlvFACosT');
@@ -28,6 +28,12 @@
         hvrBackOut = function animateRealisationsHoverOut() {
             timelineBtnBackHover.to('.arrow-back', { x: '0', duration: 0.1 });
         };
+    });
+
+    $isInForm = true;
+
+    onDestroy(() => {
+        $isInForm = false;
     });
 
     let hvr;

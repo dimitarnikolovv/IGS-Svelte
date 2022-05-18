@@ -1,10 +1,10 @@
 <script>
-    import { _ } from '../i18n';
+    import { _ } from '../lib/i18n';
     import Slider from '../components/Slider.svelte';
     import MediaQuery from './MediaQuery.svelte';
     import Saos from 'saos';
-    import inView from '../isInView';
-    import { darkenMenu } from '../stores';
+    import inView from '../lib/isInView';
+    import { darkenMenu } from '../lib/stores';
 
     export let type = '';
     export let carousel = false;
@@ -442,7 +442,13 @@
         @media only screen and (max-width: 768px) {
             transform: skew(0) translateX(0);
             &--badge {
-                display: none;
+                top: 45%;
+                transform: translateX(-60%);
+                opacity: 1;
+
+                &:hover {
+                    transform: translateX(-60%);
+                }
             }
         }
     }

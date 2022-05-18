@@ -1,6 +1,6 @@
 <script>
-    import { _ } from '../i18n';
-    import { images } from '../stores';
+    import { _ } from '../lib/i18n';
+    import { images } from '../lib/stores';
 
     const clicked = {
         one: false,
