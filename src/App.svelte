@@ -1,5 +1,6 @@
 <script>
     import './global.css';
+    import './lib/console';
     import { onMount } from 'svelte';
     import { setUpI18n, isLocaleLoaded } from './lib/i18n';
     import Router from 'svelte-spa-router';

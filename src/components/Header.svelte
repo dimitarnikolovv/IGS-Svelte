@@ -16,6 +16,7 @@
         class:animate-hamburger-bg={$isToggled}
         class:menu-dark={$menuDark}
         class:darken-menu={$darkenMenu}
+        class:no-effect={!$isToggled}
     >
         <button
             id="nav-link"
@@ -82,6 +83,12 @@
             transform: translateY(50px);
             opacity: 0;
             transition: all 400ms ease;
+        }
+
+        &.no-effect {
+            &::after {
+                pointer-events: none;
+            }
         }
 
         div,
