@@ -14,7 +14,8 @@
             .to('.loader-animate-right', { x: '100%' }, 'slider-x')
             .to('.loader-slides', { backgroundColor: 'transparent', duration: 0 }, 'slider-x')
             .to('.loader', { opacity: 0, duration: 0.3 }, '-=0.3')
-            .to('.loader', { display: 'none' }, '-=0.2');
+            .to('.loader', { display: 'none' }, '-=0.2')
+            .to('body', { overflowY: 'visible' });
     });
 </script>
 

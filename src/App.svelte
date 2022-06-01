@@ -21,9 +21,6 @@
     onMount(() => {
         window.onload = () => {
             window.scrollTo(0, 0);
-            setTimeout(() => {
-                document.querySelector('body').style.overflowY = 'visible';
-            }, 4700);
         };
     });
 

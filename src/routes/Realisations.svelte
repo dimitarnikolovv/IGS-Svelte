@@ -1,9 +1,10 @@
 <script>
     import { _ } from '../lib/i18n';
+    import { images } from '../lib/stores';
     import Main from '../components/Main.svelte';
+    import Showreel from '../components/Showreel.svelte';
     import Section from '../components/Section.svelte';
     import ProjectDescription from '../components/ProjectDescription.svelte';
-    import { images } from '../lib/stores';
 </script>
 
 <svelte:head>
@@ -11,7 +12,8 @@
 </svelte:head>
 
 <Main>
-    <h1 style="position: absolute; top:8rem;">What we have done</h1>
+    <h1 style="position: absolute; top:8rem; font-size: 5px;">What we have done</h1>
+    <Showreel videoUrl={{ mov: './images/logo.mov', webm: './images/logo.webm' }} />
     <Section
         carousel={true}
         image={$images.projects.project1.images[$images.projects.project1.images.length - 1]}
