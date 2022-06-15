@@ -13,7 +13,7 @@
 
 <Main>
     <h1 style="position: absolute; top:8rem; font-size: 5px;">What we have done</h1>
-    <Showreel videoUrl={{ mov: './images/logo.mov', webm: './images/logo.webm' }} />
+    <Showreel videoUrl={'./images/showreel.mp4'} />
     <Section
         carousel={true}
         image={$images.projects.project1.images[$images.projects.project1.images.length - 1]}
