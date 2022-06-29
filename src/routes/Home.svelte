@@ -1,9 +1,20 @@
 <script>
     import { _, locale, setUpI18n } from '../lib/i18n';
-    import { images, isToggled } from '../lib/stores';
+    import { images, isToggled, loaderFinished } from '../lib/stores';
     import Main from '../components/Main.svelte';
     import Section from '../components/Section.svelte';
-    import RealisationsBtn from '../components/RealisationsBtn.svelte';
+    import Button from '../components/Button.svelte';
+
+    let renderVideo = true;
+
+    $: {
+        reMountVideo($locale);
+    }
+
+    function reMountVideo() {
+        renderVideo = false;
+        setTimeout(() => (renderVideo = true), 0);
+    }
 </script>
 
 <svelte:head>
@@ -46,12 +57,18 @@
     <Section carousel={false} image={$images.covers.home} sectionLabel="Home section">
         <h3 style="opacity: 0; position: absolute">{@html $_('home.title')}</h3>
         <div class="text-animation-wrap">
-            <img src={$_('home.animation-path')} alt="" />
+            {#if renderVideo && $loaderFinished}
+                <video autoplay muted playsinline loop preload="metadata">
+                    <source src={$_('home.animation-path.webm')} type="video/webm" />
+                    <source src={$_('home.animation-path.mov')} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            {/if}
         </div>
     </Section>
 
     {#if !$isToggled}
-        <RealisationsBtn />
+        <Button type="realisations" />
     {/if}
 </Main>
 
@@ -66,7 +83,7 @@
         justify-content: center;
         align-items: center;
 
-        img {
+        video {
             width: 100%;
         }
     }

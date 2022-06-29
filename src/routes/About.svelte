@@ -34,6 +34,6 @@
 
 <style lang="scss">
     p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 </style>

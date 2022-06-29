@@ -20,7 +20,10 @@
     "home": {
         "page-title": "",
         "title": "",
-        "animation-path": "./images/text/home/home-pl.gif",
+        "animation-path": {
+            "webm": "./images/text/home/home-pl.webm",
+            "mov": "./images/text/home/home-pl.mov"
+        },
         "realisations-button": ""
     },
     "about": {
@@ -35,7 +38,7 @@
                 "description": ""
             },
             "person3": {
-                "name": "Aleksandra Zięb",
+                "name": "Aleksandra Zięba",
                 "description": ""
             },
             "person4": {
@@ -161,27 +164,27 @@
         }
     },
     "contact": {
-        "page-title": " - IGS Production",
-        "title": " ",
-        "poland": "",
-        "bulgaria": "",
-        "tel": "",
-        "email": "",
-        "address": "",
-        "contact-button": "",
+        "page-title": "Kontakt - IGS Production",
+        "title": "Zobacz nasze dane kontaktowe dla {targetCountry}",
+        "poland": "Polska",
+        "bulgaria": "Bułgaria",
+        "tel": "Tel:",
+        "email": "Email:",
+        "address": "Adres:",
+        "contact-button": "Kontakt",
         "form": {
-            "title": "",
-            "name": "",
-            "name-label": "",
-            "email": "",
-            "email-label": "",
-            "subject": "",
-            "subject-label": "",
-            "message": "",
-            "message-label": "",
-            "back-button": "",
-            "send-button": ""
+            "title": "Zostaw nam wiadomość",
+            "name": "Nazwa",
+            "name-label": "Wpisz swoje imię",
+            "email": "Email",
+            "email-label": "Wprowadź swój email",
+            "subject": "Temat",
+            "subject-label": "Wpisz temat",
+            "message": "Wiadomość",
+            "message-label": "Wpisz swoją wiadomość",
+            "back-button": "Plecy",
+            "send-button": "Wysłać"
         },
-        "footer": "<p class=\"info-text\"> {currYear}. IGS Production &copy;.</p> <p class=\"info-text\">  <a href=\"https://infrablu.xyz\" class=\"external-link\" target=\"blank\">InfraBlu</a >. </p>"
+        "footer": "<p class=\"info-text\">Wszelkie prawa zastrzeżone {currYear}. IGS Production &copy;.</p> <p class=\"info-text\"> Wykonane z miłością przez <a href=\"https://infrablu.xyz\" class=\"external-link\" target=\"blank\">InfraBlu</a >. </p>"
     }
 }

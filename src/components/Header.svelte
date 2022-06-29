@@ -1,5 +1,5 @@
 <script>
-    import { isToggled, menuDark, darkenMenu } from '../lib/stores';
+    import { isToggled, menuDark, menuLight, darkenMenu } from '../lib/stores';
 
     function changeToggled() {
         $isToggled = !$isToggled;
@@ -15,6 +15,7 @@
         class="hamburger"
         class:animate-hamburger-bg={$isToggled}
         class:menu-dark={$menuDark}
+        class:menu-light={$menuLight}
         class:darken-menu={$darkenMenu}
         class:no-effect={!$isToggled}
     >
@@ -197,6 +198,16 @@
             & > * {
                 background-color: var(--clr-accent-900) !important;
             }
+        }
+    }
+
+    .menu-light {
+        #nav-link::after {
+            color: var(--clr-primery-100) !important;
+            transition: color 200ms ease;
+        }
+        #nav-link div {
+            background-color: var(--clr-primery-100) !important;
         }
     }
 

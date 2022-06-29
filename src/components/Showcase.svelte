@@ -166,6 +166,7 @@
                 h4 {
                     width: fit-content;
                     max-width: 25%;
+                    font-size: 1.6rem;
                     font-family: 'Sailec Bold', 'Gilroy';
                     transition: transform 100ms 230ms ease-in;
                 }
@@ -190,15 +191,19 @@
 
                 &.start {
                     h4 {
-                        width: 20%;
-                        padding-inline-start: 17%;
+                        width: 15%;
+                        padding-inline-start: 13%;
                     }
                 }
 
                 &.end {
                     h4 {
-                        width: 18%;
-                        padding-inline-end: 6%;
+                        width: 15%;
+                        padding-inline-end: 9%;
+
+                        @media only screen and (min-width: 1081), (max-width: 1289px) {
+                            font-size: 1.4rem;
+                        }
                     }
                 }
             }

@@ -1,7 +1,9 @@
 import { readable, writable } from 'svelte/store';
 
+export const loaderFinished = writable(false);
 export const isToggled = writable(false);
 export const menuDark = writable(false);
+export const menuLight = writable(false);
 export const darkenMenu = writable(false);
 export const isInForm = writable(false);
 export const contactsTransitioning = writable({

@@ -1,6 +1,7 @@
 <script>
     import { gsap } from 'gsap';
     import { onMount } from 'svelte';
+    import { loaderFinished } from '../lib/stores';
 
     onMount(() => {
         const timeLineLoader = gsap.timeline();
@@ -16,6 +17,10 @@
             .to('.loader', { opacity: 0, duration: 0.3 }, '-=0.3')
             .to('.loader', { display: 'none' }, '-=0.2')
             .to('body', { overflowY: 'visible' });
+
+        setTimeout(() => {
+            $loaderFinished = true;
+        }, 5000);
     });
 </script>
 

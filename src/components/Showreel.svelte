@@ -1,15 +1,76 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onDestroy } from 'svelte';
+    import { menuLight } from '../lib/stores';
+    import inView from '../lib/isInView';
 
     export let videoUrl = '';
+
+    onDestroy(() => {
+        $menuLight = false;
+    });
 
     let paused = false;
     let volume = 0;
     let video;
+    let color = 'white';
 
-    onMount(() => {
-        video = document.querySelector('.showreel-video');
-    });
+    function checkBackground(e) {
+        const time = e.target.currentTime;
+
+        if (time > 17.5 && time < 18.2) {
+            if (color != 'black') {
+                color = 'black';
+                setTimeout(() => {
+                    color = 'white';
+                }, 800);
+            }
+        }
+
+        if (time > 25 && time < 27.8) {
+            if (color != 'black') {
+                color = 'black';
+                setTimeout(() => {
+                    color = 'white';
+                }, 2800);
+            }
+        }
+
+        if (time > 34 && time < 34.6) {
+            if (color != 'black') {
+                color = 'black';
+                setTimeout(() => {
+                    color = 'white';
+                }, 600);
+            }
+        }
+
+        if (time > 40.1 && time < 40.7) {
+            if (color != 'black') {
+                color = 'black';
+                setTimeout(() => {
+                    color = 'white';
+                }, 600);
+            }
+        }
+
+        if (time > 44.1 && time < 44.9) {
+            if (color != 'black') {
+                color = 'black';
+                setTimeout(() => {
+                    color = 'white';
+                }, 800);
+            }
+        }
+
+        if (time > 49.1 && time < 51) {
+            if (color != 'black') {
+                color = 'black';
+                setTimeout(() => {
+                    color = 'white';
+                }, 1900);
+            }
+        }
+    }
 
     function playPauseVideo() {
         if (paused) {
@@ -40,14 +101,23 @@
         playsinline
         preload="metadata"
         loop="true"
-        bind:paused
+        bind:this={video}
         bind:volume
+        on:timeupdate={checkBackground}
+        on:click={playPauseVideo}
+        use:inView={{ bottom: 0 }}
+        on:enter={() => {
+            $menuLight = true;
+        }}
+        on:exit={() => {
+            $menuLight = false;
+        }}
     >
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
     </video>
 
-    <div class="video-controls">
+    <div class="video-controls" style="--svg-fill: {color}">
         <ul>
             <li
                 style="display: {paused ? 'none' : 'block'}"
@@ -116,7 +186,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                     ><line
-                        stroke="#ffffff"
+                        stroke={color}
                         stroke-linecap="round"
                         stroke-miterlimit="10"
                         stroke-width="2"
@@ -125,7 +195,7 @@
                         y1="20"
                         y2="30"
                     /><line
-                        stroke="#ffffff"
+                        stroke={color}
                         stroke-linecap="round"
                         stroke-miterlimit="10"
                         stroke-width="2"
@@ -139,15 +209,15 @@
                         width="50"
                     /><path
                         d="M10,33H3  c-1.103,0-2-0.898-2-2V19c0-1.102,0.897-2,2-2h7"
-                        fill="#ffffff"
-                        stroke="#ffffff"
+                        fill={color}
+                        stroke={color}
                         stroke-linejoin="round"
                         stroke-miterlimit="10"
                         stroke-width="2.08"
                     /><path
                         d="M9.604,32.43  C9.256,32.129,9,31.391,9,30.754V19.247c0-0.637,0.256-1.388,0.604-1.689L22.274,4.926C23.905,3.27,26,3.898,26,6.327v36.988  c0,2.614-1.896,3.604-3.785,1.686L9.604,32.43z"
                         fill="#none"
-                        stroke="#ffffff"
+                        stroke={color}
                         stroke-linejoin="round"
                         stroke-miterlimit="10"
                         stroke-width="1.9797"
@@ -169,30 +239,30 @@
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                     ><rect fill="none" height="50" width="50" /><path
                         d="M10,33H3  c-1.103,0-2-0.898-2-2V19c0-1.102,0.897-2,2-2h7"
-                        fill="#ffffff"
-                        stroke="#ffffff"
+                        fill={color}
+                        stroke={color}
                         stroke-linejoin="round"
                         stroke-miterlimit="10"
                         stroke-width="2.08"
                     /><path
                         d="M9.604,32.43  C9.256,32.129,9,31.391,9,30.754V19.247c0-0.637,0.256-1.388,0.604-1.689L22.274,4.926C23.905,3.27,26,3.898,26,6.327v36.988  c0,2.614-1.896,3.604-3.785,1.686L9.604,32.43z"
-                        fill="#ffffff"
-                        stroke="#ffffff"
+                        fill={color}
+                        stroke={color}
                         stroke-linejoin="round"
                         stroke-miterlimit="10"
                         stroke-width="1.9797"
                     /><path
                         d="  M30.688,19.417C33.167,20.064,35,22.32,35,25s-1.833,4.936-4.312,5.584"
-                        fill="#ffffff"
-                        stroke="#ffffff"
+                        fill={color}
+                        stroke={color}
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-miterlimit="10"
                         stroke-width="2"
                     /><path
                         d="  M34.92,13.142C39.136,15.417,42,19.873,42,25c0,5.111-2.85,9.557-7.045,11.835"
-                        fill="#ffffff"
-                        stroke="#ffffff"
+                        fill={color}
+                        stroke={color}
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-miterlimit="10"
@@ -206,15 +276,19 @@
 
 <style lang="scss">
     div.video-wrapper {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        position: relative;
         max-height: 100vh;
         width: 100vw;
 
         margin-block-start: -2.5rem;
+
+        @media only screen and (max-width: 1080px) {
+            margin-block-start: 0;
+        }
 
         video {
             width: 100%;
@@ -237,7 +311,8 @@
         ul {
             svg {
                 width: 24px;
-                fill: white;
+                fill: var(--svg-fill);
+                transition: 80ms ease;
                 cursor: pointer;
             }
         }

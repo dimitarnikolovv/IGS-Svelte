@@ -2,7 +2,7 @@
     "navigation": {
         "home": {
             "title": "Home",
-            "sub-title": "Where is all began"
+            "sub-title": "Where it all began"
         },
         "about": {
             "title": "Who we are",
@@ -20,7 +20,10 @@
     "home": {
         "page-title": "Home - IGS Production",
         "title": "Using new media, we change <span>your ideas</span> into reality!",
-        "animation-path": "./images/text/home/home-en.gif",
+        "animation-path": {
+            "webm": "./images/text/home/home-en.webm",
+            "mov": "./images/text/home/home-en.mov"
+        },
         "realisations-button": "Our Realisations"
     },
     "about": {
@@ -35,7 +38,7 @@
                 "description": "Radek is great in finances. He creates valuations and budget assumptions for our clients with closed eyes. He can find money where there is none, and his cool calculations and entrepreneurial thinking provide safe solutions to the financial dilemmas of our contractors."
             },
             "person3": {
-                "name": "Aleksandra Zięb",
+                "name": "Aleksandra Zięba",
                 "description": "Ola is a woman focused on work and achieving success. She is meticulous, can handle difficult and supposedly unsolvable issues, and is always smiling and ready to help. She drives our entire team with energy and commitment, and her fresh perspective opens up previously closed gates."
             },
             "person4": {
@@ -67,7 +70,7 @@
                 },
                 "ordering-party": {
                     "title": "About the ordering party:",
-                    "content": "<p> Our Team has been implementing the project since 2019, inter alia, in cooperation with GroMar Sp. z o. o., Englishsquare.pl Sp. z o. o., <a class=\"external-link\" href=\"https://contentplus.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">CONTENTPLUS.PL</a > Sp. z o. o., LPE Sp. z o. o. and Double Dare Sp. z o. o. These companies are leaders on the Polish e-learning market. </p>"
+                    "content": "<p> Our Team has been implementing the project since 2019, inter alia, in cooperation with <a class=\"external-link\" href=\"https://gromar.eu/\" target=\"_blank\" rel=\"noreferrer noopener\">GroMar</a> Sp. z o. o., <a class=\"external-link\" href=\"http://englishsquare.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">Englishsquare.pl</a> Sp. z o. o., <a class=\"external-link\" href=\"https://contentplus.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">CONTENTPLUS.PL</a > Sp. z o. o., LPE Sp. z o. o. and Double Dare Sp. z o. o. These companies are leaders on the Polish e-learning market. </p>"
                 },
                 "link": {
                     "title": "Link to the project:",

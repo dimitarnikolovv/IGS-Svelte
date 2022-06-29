@@ -22,14 +22,11 @@
     <section aria-label={sectionLabel} class:contacts>
         <div class="section-wrapper">
             {#if showSlider}
-                <div
-                    class="close-slider"
+                <button
                     on:click={() => {
                         showSlider = false;
-                    }}
+                    }}>x</button
                 >
-                    <p style="color: white; font-weight:800;">X</p>
-                </div>
                 <Slider images={gallery} />
             {/if}
             <div class="section-background">
@@ -121,12 +118,18 @@
 {/if}
 
 <style lang="scss">
-    div.close-slider {
+    button {
         z-index: 3;
         position: absolute;
-        top: 2rem;
-        right: 2rem;
-        height: fit-content;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 2em;
+        height: 2em;
+        color: white;
+        font-weight: 800;
+        font-size: 1.4rem;
+        border: none;
+        border-radius: 50%;
         cursor: pointer;
     }
 
@@ -147,6 +150,12 @@
 
                 .section-container {
                     height: 100vh !important;
+                }
+            }
+
+            @media only screen and (max-width: 360px), (max-height: 740px) {
+                .section-container {
+                    height: 120vh !important;
                 }
             }
         }
@@ -442,7 +451,7 @@
         @media only screen and (max-width: 768px) {
             transform: skew(0) translateX(0);
             &--badge {
-                top: 45%;
+                top: 30%;
                 transform: translateX(-60%);
                 opacity: 1;
 

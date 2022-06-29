@@ -1,37 +1,26 @@
 <script>
-    import { _ } from '../../lib/i18n';
+    import { _, locale } from '../../lib/i18n';
     import { fly, fade } from 'svelte/transition';
     import { onMount } from 'svelte';
     import { contactsTransitioning } from '../../lib/stores';
+    import Button from '../Button.svelte';
     import gsap from 'gsap';
 
     onMount(() => {
-        const timelineBtnContactHover = gsap.timeline();
-
-        hvr = function animateRealisationsHover() {
-            timelineBtnContactHover.to('.arrow', { x: '10px', duration: 0.1 });
-        };
-
-        hvrOut = function animateRealisationsHoverOut() {
-            timelineBtnContactHover.to('.arrow', { x: '0', duration: 0.1 });
-        };
-
         const timelineBtnCountryHover = gsap.timeline();
 
-        hvrCntry = function animateRealisationsHover() {
+        hvrCntry = function animateCountryHover() {
             timelineBtnCountryHover.to('.arrow-country', { x: '10px', duration: 0.1 });
         };
 
-        hvrCntryOut = function animateRealisationsHoverOut() {
+        hvrCntryOut = function animateCountryHoverOut() {
             timelineBtnCountryHover.to('.arrow-country', { x: '0', duration: 0.1 });
         };
     });
 
-    let hvr;
-    let hvrOut;
     let hvrCntry;
     let hvrCntryOut;
-    let country = 'Poland';
+    let country = $locale === 'bg' ? 'Bulgaria' : 'Poland';
 
     let matchesMedia = window.matchMedia('(min-width: 606px)');
 
@@ -40,9 +29,21 @@
     });
 
     const outrosEnd = {
-        poland: false,
-        bulgaria: true,
+        poland: $locale === 'bg' ? true : false,
+        bulgaria: $locale === 'bg' ? false : true,
     };
+
+    let targetCntry;
+
+    $: {
+        if (country === 'Poland') {
+            if ($locale === 'pl') targetCntry = 'Bułgarii';
+            else targetCntry = $_('contact.bulgaria');
+        } else {
+            if ($locale === 'pl') targetCntry = 'Polski';
+            else targetCntry = $_('contact.poland');
+        }
+    }
 </script>
 
 {#if $contactsTransitioning.outroEnd.form}
@@ -85,7 +86,7 @@
                                 target="blank"
                             >
                                 <span class="info--content">
-                                    Goździków 27-9, 04-231 <br /> Warszawa, Poland
+                                    Goździków 13/27, 04-231 <br /> Warszawa, Poland
                                 </span>
                             </a>
                         </address>
@@ -97,10 +98,7 @@
                         <h4>
                             {$_('contact.title', {
                                 values: {
-                                    targetCountry:
-                                        country == 'Poland'
-                                            ? $_('contact.bulgaria')
-                                            : $_('contact.poland'),
+                                    targetCountry: targetCntry,
                                 },
                             })}
                         </h4>
@@ -152,10 +150,7 @@
                     <h4>
                         {$_('contact.title', {
                             values: {
-                                targetCountry:
-                                    country == 'Poland'
-                                        ? $_('contact.bulgaria')
-                                        : $_('contact.poland'),
+                                targetCountry: targetCntry,
                             },
                         })}
                     </h4>
@@ -197,12 +192,12 @@
                 <ul class="contacts">
                     <li>
                         <span class="info">{$_('contact.tel')} </span>
-                        <a class="contacts-link" href="tel:+48694091229"> +356 000 000 000 </a>
+                        <a class="contacts-link" href="tel:+359896501210"> +356 89 6501210 </a>
                     </li>
                     <li>
                         <span class="info">{$_('contact.email')} </span>
-                        <a class="contacts-link" href="mailto:biuro@igsproduction.com">
-                            biuro@igsproduction.com
+                        <a class="contacts-link" href="mailto:office@igsproduction.com">
+                            office@igsproduction.com
                         </a>
                     </li>
                     <li>
@@ -214,7 +209,7 @@
                                 target="blank"
                             >
                                 <span class="info--content">
-                                    Some street №00, <br /> 1000 Sofia, Bulgaria
+                                    Ул. Бачо Киро №5, <br /> 9700 Шумен , България
                                 </span>
                             </a>
                         </address>
@@ -225,10 +220,7 @@
                         <h4>
                             {$_('contact.title', {
                                 values: {
-                                    targetCountry:
-                                        country == 'Poland'
-                                            ? $_('contact.bulgaria')
-                                            : $_('contact.poland'),
+                                    targetCountry: targetCntry,
                                 },
                             })}
                         </h4>
@@ -279,10 +271,7 @@
                     <h4>
                         {$_('contact.title', {
                             values: {
-                                targetCountry:
-                                    country == 'Poland'
-                                        ? $_('contact.bulgaria')
-                                        : $_('contact.poland'),
+                                targetCountry: targetCntry,
                             },
                         })}
                     </h4>
@@ -311,23 +300,7 @@
             {/if}
         {/if}
 
-        <button
-            class="btn-next"
-            on:click={() => {
-                $contactsTransitioning.location = 'form';
-            }}
-            on:mouseenter={hvr}
-            on:mouseleave={hvrOut}
-        >
-            {$_('contact.contact-button')}
-            <div class="arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                    <path
-                        d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
-                    />
-                </svg>
-            </div>
-        </button>
+        <Button type="contact_us" />
     </div>
 {/if}
 
@@ -438,33 +411,6 @@
                     path {
                         fill: var(--clr-text-primery-100);
                     }
-                }
-            }
-        }
-    }
-
-    button.btn-next {
-        overflow: hidden;
-        font-size: 1.2rem;
-        position: relative;
-        color: var(--clr-text-primery-100);
-        background-color: var(--clr-accent-600);
-        padding-block: 0.7em 0.4em;
-        padding-inline: 2.6em;
-        border-radius: 2em;
-        cursor: pointer;
-        margin-inline-end: auto;
-
-        .arrow {
-            position: absolute;
-            right: 0.6em;
-            top: 26%;
-            transition: transform 300ms ease;
-            svg {
-                width: 30px;
-                height: inherit;
-                path {
-                    fill: var(--clr-text-primery-100);
                 }
             }
         }
