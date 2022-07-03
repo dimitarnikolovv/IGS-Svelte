@@ -95,7 +95,7 @@
                 },
                 "link": {
                     "title": "Link to the project:",
-                    "content": "<p> <a class=\"external-link\" href=\"https://muzeum.gumed.edu.pl/61668.html\" target=\"_blank\" rel=\"noreferrer noopener\">muzeum.gumed.edu.pl</a > </p>"
+                    "content": "<p><a class=\"external-link\" href=\"https://muzeum.gumed.edu.pl/61668.html\" target=\"_blank\" rel=\"noreferrer noopener\">muzeum.gumed.edu.pl</a > </p>"
                 }
             }
         },
@@ -116,7 +116,7 @@
                 },
                 "link": {
                     "title": "Link to the project:",
-                    "content": "<p> <a class=\"external-link\" href=\"https://youtu.be/xTONJTQeMTM\" target=\"_blank\" rel=\"noreferrer noopener\" > youtu.be/xTONJTQeMTM </a> </p>"
+                    "content": "<p><a class=\"external-link\" href=\"https://youtu.be/xTONJTQeMTM\" target=\"_blank\" rel=\"noreferrer noopener\" > youtu.be/xTONJTQeMTM </a></p>"
                 }
             }
         },
@@ -137,7 +137,7 @@
                 },
                 "link": {
                     "title": "Link to the project:",
-                    "content": "<p> <a class=\"external-link\" href=\"https://youtu.be/08YpFfODo5g\" target=\"_blank\" rel=\"noreferrer noopener\">youtu.be/08YpFfODo5g</a > </p>"
+                    "content": "<p><a class=\"external-link\" href=\"https://youtu.be/08YpFfODo5g\" target=\"_blank\" rel=\"noreferrer noopener\">youtu.be/08YpFfODo5g</a > </p>"
                 }
             }
         },

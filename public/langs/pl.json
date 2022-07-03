@@ -27,138 +27,138 @@
         "realisations-button": ""
     },
     "about": {
-        "page-title": "",
+        "page-title": "O Nas",
         "team": {
             "person1": {
                 "name": "Norbert Grzechnik",
-                "description": ""
+                "description": "Norbert uwielbia pracę w zespole, ale w pojedynkę też czuje się jak ryba w wodzie. Ma wiedzę i doświadczenie w branży, potrafi rozmawiać z ludźmi i słuchać ich potrzeb, a jego kreatywność pozwala na tworzenie projektów oryginalnych i celnie trafiających w założenia klienta. Jest pracowity, ambitny i zawsze poda pomocną dłoń."
             },
             "person2": {
                 "name": "Radosław Frelek",
-                "description": ""
+                "description": "Radek świetnie radzi sobie w finansach. Z zamkniętymi oczami tworzy wyceny i założenia budżetowe dla naszych klientów. Potrafi znaleźć pieniądze tam gdzie ich nie ma, a jego chłodne kalkulacje i przedsiębiorcze myślenie zapewniają bezpieczne rozwiązania dla finansowych dylematów naszych kontrahentów."
             },
             "person3": {
                 "name": "Aleksandra Zięba",
-                "description": ""
+                "description": "Ola to kobieta skupiona na pracy i osiągnięciu sukcesu. Jest skrupulatna, świetnie sobie radzi w kwestiach trudnych i podobno tych nierozwiązywalnych, a przy tym jest zawsze uśmiechnięta i gotowa do pomocy. Energią i zaangażowaniem napędza nasz cały zespół, a jej świeże spojrzenie otwiera wcześniej zamknięte furtki."
             },
             "person4": {
                 "name": "Igor Grzegorz Suski",
-                "description": ""
+                "description": "Igor to ktoś, kogo chciałaby mieć każda firma. Pracowity, sumienny i zawsze chętny do działania. Niestraszne mu najtrudniejsze wyzwania stawiane przez naszych klientów, zawsze znajdzie korzystne rozwiązania. Poczuciem humoru i nowymi pomysłami zaraża innych, a prowadzone przez niego projekty zawsze kończą się zadowoleniem klienta."
             },
             "person5": {
                 "name": "Hanna Sosnowska",
-                "description": ""
+                "description": "…Hanna, dzięki wieloletniemu doświadczeniu w biznesie krajowym i międzynarodowym jest osobą gotową na wszystko. Uśmiechnięta, wyluzowana, ale jednocześnie sumienna i zawsze zaangażowana w pracę w 100%, daje nam motywację do pokonywania trudności i rozwijania się."
             }
         },
-        "section1": "",
-        "section2": "",
-        "section3": ""
+        "section1": "Jesteśmy kolektywem młodych, kreatywnych ludzi. Pełnych pasji i profesjonalizmu, a także perfekcjonizmu w podejmowanych działaniach. Chcemy, by te cechy przekonywały Was do podejmowania współpracy z nami. Wszystkim naszym dotychczasowym kontrahentom dziękujemy i mamy nadzieję, że już zawsze będziemy cieszyć się tak dużym zaufaniem z Waszej strony.",
+        "section2": "Nasz zespół dzieli się na tych, którzy działają w biurze przygotowując dla Was koncepcje, budżetowania i rozliczenia oraz na ekipę planowców, dzielnie realizujących projekty w terenie. Nie boimy się nowych wyzwań, z których każde wykonujemy z dbałością o najmniejsze szczegóły. Dzięki Wam możemy stale się rozwijać i poprawiać nasze umiejętności.",
+        "section3": "Nie spoczywając na laurach, ciągle poprawiamy nasze usługi, szkolimy się i zwiększamy zasoby techniczne naszego sprzętu, żeby każdy kolejny projekt był naszym najlepszym. W parze z rozwojem idą rekrutacje nowych osobowości, więc jeśli uważasz, że tak jak my potrafisz zmienić pomysł w rzeczywistość - odezwij się!"
     },
     "realisations": {
-        "page-title": "",
-        "hint_button": "",
+        "page-title": "Projekty - IGS Production",
+        "hint_button": "zobacz więcej",
         "section1": {
-            "title": "",
+            "title": "ZPE - Zintegrowana Platforma Edukacyjna",
             "project-information": {
                 "about": {
-                    "title": "",
-                    "content": ""
+                    "title": "O projekcie:",
+                    "content": "<p>Zintegrowana Platforma Edukacyjna, dawniej: e-podręczniki do kształcenia ogólnego to baza bezpłatnych, ogólnodostępnych i otwartych zasobów edukacyjnych do rozwijania kompetencji uczniów i nauczycieli w zakresie stosowania technologii komunikacyjno-informacyjnych w ramach programu rządowego \"Cyfrowa Szkoła\".</p> <p>Na platformie tej znajdują się materiały, które powstały ze środków Unii Europejskiej w ramach Europejskiego Funduszu Społecznego (Program Operacyjny Kapitał Ludzki 2007−2013 oraz Program Operacyjny Wiedza Edukacja Rozwój 2014−2020).</p>"
                 },
                 "implementation": {
-                    "title": "",
-                    "content": ""
+                    "title": "O realizacji projektu:",
+                    "content": "<p>Projekt Zintegrowanej Platformy Edukacyjnej jest projektem długofalowym, w trakcie którego, mieliśmy przyjemność podjąć współpracę z wieloma specjalistami z różnorodnych dziedzin nauk humanistycznych i ścisłych, a także z rzemieślnikami reprezentującymi najróżniejsze zawody, wykonywane w naszym kraju. Realizując projekt nasza ekipa odwiedziła wiele miejscowości w całej Polsce, przejeżdżając łącznie tysiące kilometrów. Nasi operatorzy kamer nagrywali jednego dnia prace Koszykarza-Plecionkarza, zaś drugiego Technika Tyfloinformatyki. Innym z ciekawych zadań było przygotowanie podcastów o tematyce nowinek z dziedziny genetyki, czy też stworzenie gier interaktywnych przedstawiających zjawiska chemiczne zachodzące w otaczającym nas środowisku. Poza nagraniami audiowizualnymi czy programowaniem, tworzyliśmy również schematy graficzne, animacje 2D oraz filmy w technice 360°.</p>"
                 },
                 "ordering-party": {
-                    "title": "",
-                    "content": ""
+                    "title": "O Zamawiającym:",
+                    "content": "<p>Nasz Team od 2019 roku realizuje projekt między innymi we współpracy z firmami <a class=\"external-link\" href=\"https://gromar.eu/\" target=\"_blank\" rel=\"noreferrer noopener\">GroMar</a> Sp. z o. o., <a class=\"external-link\" href=\"http://englishsquare.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">Englishsquare.pl</a> Sp. z o. o., <a class=\"external-link\" href=\"https://contentplus.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">CONTENTPLUS.PL</a > Sp. z o.o., LPE Sp. z o. o. i Double Dare Sp. z o. o. Firmy te są liderami na polskim rynku e-learningowym. </p>"
                 },
                 "link": {
-                    "title": "",
-                    "content": ""
+                    "title": "Link do projektu:",
+                    "content": "<p> <a class=\"external-link\" href=\"https://zpe.gov.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">zpe.gov.pl</a > </p>"
                 }
             }
         },
         "section2": {
-            "title": "",
+            "title": "Przyszłość dzięki przeszłości",
             "project-information": {
                 "about": {
-                    "title": "",
-                    "content": ""
+                    "title": "O projekcie:",
+                    "content": "<p>Przyszłość dzięki Przeszłości – opowieść o rozwoju medycyny - projekt realizowany na zamówienie Gdańskiego Uniwersytetu Medycznego, czyli słynnego \"GUMedu\". Cytując artykuł o projekcie, zamieszczony na stronie GUMed - \"Jego celem jest upowszechnienie historii medycyny, a w jego ramach powstanie Wirtualne Muzeum Gdańskiego Uniwersytetu Medycznego. Dzięki temu z dowolnego miejsca na świecie będzie można zapoznać się z wybranymi eksponatami znajdującymi się w zbiorach Muzeum, poznać ich historię i rolę, jaką odegrały w rozwoju poszczególnych dziedzin medycyny.\"</p> <p>Projekt został sfinansowany ze środków Gdańskiego Uniwersytetu Medycznego oraz z programu Społeczna odpowiedzialność nauki Ministra Edukacji i Szkolnictwa Wyższego.</p>"
                 },
                 "implementation": {
-                    "title": "",
-                    "content": ""
+                    "title": "O realizacji projektu:",
+                    "content": "<p>Nasza ekipa w III transzach produkcyjnych nagrała i zmontowała łącznie 51 filmów z serii “Przyszłość dzięki przyszłości”. Trzy wyjazdy do Gdańska wspominamy zawsze z uśmiechem na twarzy, nie tylko dzięki zgranej ekipie, ale także dzięki atmosferze, która zawsze panuje na naszych planach. W procesie postprodukcji zrealizowaliśmy wizję przedstawienia muzealnych eksponatów w sposób świeży, odchodząc od przetartych szablonów dokumentacji obiektów. Dzięki grze światłocieniem i precyzyjnym ruchom kamery stworzyliśmy ujęcia pełne artyzmu i filmowego sznytu. W korelacji ze świetną narracją dr Marka Bukowskiego udało nam się wyprodukować serię krótkometrażowych dokumentów o historii rozwoju medycyny na przestrzeni lat.</p>"
                 },
                 "ordering-party": {
-                    "title": "",
-                    "content": ""
+                    "title": "O Zamawiającym:",
+                    "content": "<p>Gdański Uniwersytet Medyczny - jedna z najstarszych uczelni medycznych i jedyna medyczna uczelnia badawcza w Polsce.</p>"
                 },
                 "link": {
-                    "title": "",
-                    "content": ""
+                    "title": "Link do projektu:",
+                    "content": "<p><a class=\"external-link\" href=\"https://muzeum.gumed.edu.pl/61668.html\" target=\"_blank\" rel=\"noreferrer noopener\">muzeum.gumed.edu.pl</a > </p>"
                 }
             }
         },
         "section3": {
-            "title": "",
+            "title": "Karolina Stanisławczyk - Czy masz jak ja?",
             "project-information": {
                 "about": {
-                    "title": "",
-                    "content": ""
+                    "title": "O projekcie:",
+                    "content": "<p>Karolina Stanisławczyk - młoda wokalistka, kompozytorka i autorka tekstów z Warszawy, podbija muzyczną scenę młodego pokolenia. Jednym z jej największych sukcesów muzycznych jest utwór Cliché, który zdobył ponad 10 milionów wyświetleń w serwisie YouTube. Nie spoczywając na laurach, Karolina każdym kolejnym utworem pokazuje swój wrodzony talent. W ten sposób spotkaliśmy się na planie, w trakcie realizacji teledysku do jej kolejnego przeboju.</p>"
                 },
                 "implementation": {
-                    "title": "",
-                    "content": ""
+                    "title": "O realizacji projektu:",
+                    "content": "<p>Plan zdjęciowy odbywał się w profesjonalnym studio, który specjalnie na potrzeby koncepcyjne klienta, został wcześniej przystosowany przez nasze scenografki. Do oświetlenia planu wykorzystaliśmy zestaw mieczy LED, a materiał zarejestrowaliśmy profesjonalnymi kamerami Black Magic. W procesie preprodukcji przygotowaliśmy scenariusz, choreografię, kostiumy oraz zaplanowaliśmy, jaki efekt chcemy osiągnąć finalnym produktem. Kompleksowo spełniliśmy oczekiwania klienta, oddając z działu postprodukcji profesjonalnie zrealizowany, zmontowany teledysk o barwie i charakterze bajkowego snu.</p>"
                 },
                 "ordering-party": {
-                    "title": "",
-                    "content": ""
+                    "title": "O Zamawiającym:",
+                    "content": "<p>HYPSTERIA RECORDS® jak sami się określają to coś więcej niż tylko wytwórnia czy agencja artystyczna. Stawiają na młodych, niekoniecznie znanych twórców z różnych dziedzin sztuki, wierząc w potencjał nowej fali. W drodze po sukces idą własnymi, nieprzetartymi ścieżkami. Pod swoimi skrzydłami prowadzą takich artystów jak m.in.: Karolina Stanisławczyk, Cywil, B-ART, KOBESTONE czy Pazzy.</p>"
                 },
                 "link": {
-                    "title": "",
-                    "content": ""
+                    "title": "Link do projektu:",
+                    "content": "<p><a class=\"external-link\" href=\"https://youtu.be/xTONJTQeMTM\" target=\"_blank\" rel=\"noreferrer noopener\" > youtu.be/xTONJTQeMTM </a></p>"
                 }
             }
         },
         "section4": {
-            "title": "",
+            "title": "Codzienność Warszawa 1915-1918. Szklane negatywy ze zbiorów PRACOWNI HISTORYCZNEJ TCHOREK BENTALL",
             "project-information": {
                 "about": {
-                    "title": "",
-                    "content": ""
+                    "title": "O projekcie:",
+                    "content": "<p>Film poświęcony Pracowni Historycznej Tchorek/Bentall założonej przez rzeźbiarza i kolekcjonera Karola Tchorka powstał przed jej przekazaniem miastu w lipcu 2021 r. Dziś tę przestrzeń można postrzegać jako współczesną kunstkamerę, w której zbiegały się trzy narracje: zbiory Karola Tchorka, archiwum jego syna, teoretyka sztuki, Mariusza oraz wizja artystki Katy Bentall – żony Mariusza, komentującej i interperetującej w swych działaniach artystycznych historyczną przestrzeń.</p> <p>Ważnym bohaterem filmu są negatywy anonimowego autora z okresu I wojny światowej, niezwykłe dokumenty życia codziennego dawnej Warszawy – jej architektury i mieszkańców – w  swoim czasie przechowywane w Pracowni. </p>"
                 },
                 "implementation": {
-                    "title": "",
-                    "content": ""
+                    "title": "O realizacji projektu:",
+                    "content": "<p>Naszym zadaniem było stworzenie filmu, który przekaże w filmowy sposób istotę negatywów anonimowego autora. Dzisiejsza stolica nie odzyskałaby swojego dawnego piękna m.in.: gdyby nie tenże zbiór, dlatego nasza “poprzeczka” została wysoko ustawiona. Lokacje, w których odbywały się nagrania do filmu zapewniały niezwykłe wizualne doznania - Pałac Tyszkiewiczów-Potockich pokazał piękno i klasę dawnej polskiej architektury pałacowej w dobie klasycyzmu, zaś Pracownia Historyczna Tchorek/Bental Studio pozwoliła nam poczuć to co przez lata towarzyszyło słynnemu Karolowi Tchorkowi i jego bliskim.</p>"
                 },
                 "ordering-party": {
-                    "title": "",
-                    "content": ""
+                    "title": "O Zamawiającym:",
+                    "content": "<p>Stowarzyszenie Muzeów Uczelnianych to funkcjonujące od 2012 roku zrzeszenie jednostek muzealniczych wchodzących w skład polskich uczelni. Do Stowarzyszenia Muzeów Uczelnianych należą lub współpracują z nim przedstawiciele 106 jednostek z całej Polski. Jako stowarzyszenie zajmują się m.in.: ochroną, promocją i konserwacją zabytków będących w zasobach muzealnych. Więcej informacji na stronie: <a class=\"external-link\" href=\"https://muzeauczelniane.pl/\" target=\"_blank\" rel=\"noreferrer noopener\">muzeauczelniane.pl</a ></p>"
                 },
                 "link": {
-                    "title": "",
-                    "content": ""
+                    "title": "Link do projektu:",
+                    "content": "<p><a class=\"external-link\" href=\"https://youtu.be/08YpFfODo5g\" target=\"_blank\" rel=\"noreferrer noopener\">youtu.be/08YpFfODo5g</a > </p>"
                 }
             }
         },
         "section5": {
-            "title": "",
+            "title": "Yasir - Dope",
             "project-information": {
                 "about": {
-                    "title": "",
-                    "content": ""
+                    "title": "O projekcie:",
+                    "content": "<p>Teledysk ten był jednym z pierwszych projektów realizowanych przez naszą ekipę międzynarodowo. YASIR jako pakistański artysta, szukając odpowiedniej ekipy filmowej do stworzenia klipu, trafił pod nasze skrzydła. Koncepcja teledysku zakładała utrzymanie steampunkowego klimatu w połączeniu ze współczesnymi, klubowymi elementami.</p>"
                 },
                 "implementation": {
-                    "title": "",
-                    "content": ""
+                    "title": "O realizacji projektu:",
+                    "content": "<p>Projekt ten charakteryzował krótki czas przygotowania do dnia zdjęciowego. Okres preprodukcji trwał 2 dni, sam materiał został nagrany w ciągu jednego dnia zdjęciowego, a dokładnie zajęło nam to 13 godzin. Jako, że nasza ekipa lubi podejmować wyzwania, ten projekt pokazał, że nie ma dla nas rzeczy niemożliwych. W tym materiale poza filmowymi ujęciami i skomplikowanym ustawieniem oświetlenia, możemy pochwalić się, że 1,5 minuty klipu składało się z tylko jednego ujęcia typu mastershot!</p>"
                 },
                 "ordering-party": {
-                    "title": "",
-                    "content": ""
+                    "title": "O Zamawiającym:",
+                    "content": "<p>Chaudhry Yasir Zaman, znany jako YASIR, jest raperem, pisarzem, autorem tekstów i kompozytorem. Hinduski, urdu i pendżabski to główne języki jego twórczości.</p>"
                 },
                 "link": {
-                    "title": "",
-                    "content": ""
+                    "title": "Link do projektu:",
+                    "content": "<p> <a class=\"external-link\" href=\"https://youtu.be/IcoOPIVRXII\" target=\"_blank\" rel=\"noreferrer noopener\">youtu.be/IcoOPIVRXII</a > </p>"
                 }
             }
         }

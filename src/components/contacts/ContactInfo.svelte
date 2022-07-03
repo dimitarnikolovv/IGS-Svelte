@@ -86,7 +86,7 @@
                                 target="blank"
                             >
                                 <span class="info--content">
-                                    Goździków 13/27, 04-231 <br /> Warszawa, Poland
+                                    Goździków 13/37, 04-231 <br /> Warszawa, Poland
                                 </span>
                             </a>
                         </address>
