@@ -1,6 +1,6 @@
 <script>
-    import { onDestroy } from 'svelte';
-    import { menuLight } from '../lib/stores';
+    import { onDestroy, onMount } from 'svelte';
+    import { menuLight, loaderFinished } from '../lib/stores';
     import inView from '../lib/isInView';
 
     export let videoUrl = '';
@@ -13,11 +13,18 @@
     let volume = 0;
     let video;
     let color = 'white';
+    let mounted = false;
+
+    $: if ($loaderFinished && mounted) video.play();
+
+    onMount(() => {
+        mounted = true;
+    });
 
     function checkBackground(e) {
         const time = e.target.currentTime;
 
-        if (time > 17.5 && time < 18.2) {
+        if (time > 9.5 && time < 10.3) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
@@ -26,34 +33,34 @@
             }
         }
 
-        if (time > 25 && time < 27.8) {
+        if (time > 17 && time < 19.9) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
                     color = 'white';
-                }, 2800);
+                }, 2900);
             }
         }
 
-        if (time > 34 && time < 34.6) {
+        if (time > 26 && time < 26.7) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
                     color = 'white';
-                }, 600);
+                }, 700);
             }
         }
 
-        if (time > 40.1 && time < 40.7) {
+        if (time > 32.1 && time < 32.8) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
                     color = 'white';
-                }, 600);
+                }, 700);
             }
         }
 
-        if (time > 44.1 && time < 44.9) {
+        if (time > 36.1 && time < 36.9) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
@@ -62,7 +69,7 @@
             }
         }
 
-        if (time > 49.1 && time < 51) {
+        if (time > 41.1 && time < 43) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
@@ -96,7 +103,7 @@
 <div class="video-wrapper">
     <video
         class="showreel-video"
-        autoplay
+        autoplay={$loaderFinished}
         muted
         playsinline
         preload="metadata"

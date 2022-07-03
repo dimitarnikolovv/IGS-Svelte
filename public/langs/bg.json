@@ -19,7 +19,7 @@
     },
     "home": {
         "page-title": "Начало - IGS Production",
-        "title": "Използвайки нова медия, ние превръщаме <span>вашите идеи</span> в реалност!",
+        "title": "Използвайки нови медии, ние превръщаме <span>вашите идеи</span> в реалност!",
         "animation-path": {
             "webm": "./images/text/home/home-bg.webm",
             "mov": "./images/text/home/home-bg.mov"

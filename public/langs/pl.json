@@ -18,16 +18,16 @@
         }
     },
     "home": {
-        "page-title": "",
-        "title": "",
+        "page-title": "Home - IGS Production",
+        "title": "Korzystając z nowych mediów zmieniamy Wasze pomysły w rzeczywistość!",
         "animation-path": {
             "webm": "./images/text/home/home-pl.webm",
             "mov": "./images/text/home/home-pl.mov"
         },
-        "realisations-button": ""
+        "realisations-button": "Nasz projekt"
     },
     "about": {
-        "page-title": "O Nas",
+        "page-title": "O Nas - IGS Production",
         "team": {
             "person1": {
                 "name": "Norbert Grzechnik",
