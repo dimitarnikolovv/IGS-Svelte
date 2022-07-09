@@ -66,7 +66,7 @@
                     outrosEnd.bulgaria = false;
                 }}
             >
-                <ul class="contacts">
+                <ul class="contacts" aria-label="Contact information">
                     <li>
                         <span class="info">{$_('contact.tel')} </span>
                         <a class="contacts-link" href="tel:+48694091229"> +48 694 091 229 </a>

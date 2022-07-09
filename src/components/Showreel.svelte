@@ -69,12 +69,12 @@
             }
         }
 
-        if (time > 41.1 && time < 43) {
+        if (time > 41.1 && time < 43.2) {
             if (color != 'black') {
                 color = 'black';
                 setTimeout(() => {
                     color = 'white';
-                }, 1900);
+                }, 2100);
             }
         }
     }
@@ -103,6 +103,7 @@
 <div class="video-wrapper">
     <video
         class="showreel-video"
+        aria-label="showreel"
         autoplay={$loaderFinished}
         muted
         playsinline
@@ -125,10 +126,11 @@
     </video>
 
     <div class="video-controls" style="--svg-fill: {color}">
-        <ul>
+        <ul aria-label="video controls">
             <li
                 style="display: {paused ? 'none' : 'block'}"
                 data-control-pause
+                aria-label="pause"
                 on:click={playPauseVideo}
             >
                 <svg
@@ -156,6 +158,7 @@
             <li
                 style="display: {paused ? 'block' : 'none'}"
                 data-control-play
+                aria-label="play"
                 on:click={playPauseVideo}
             >
                 <svg
@@ -182,6 +185,7 @@
             <li
                 style="display: {volume === 0 ? 'block' : 'none'}"
                 data-control-unmute
+                aria-label="unmute"
                 on:click={muteUnmuteVideo}
             >
                 <svg
@@ -234,6 +238,7 @@
             <li
                 style="display: {volume === 0 ? 'none' : 'block'}"
                 data-control-mute
+                aria-label="mute"
                 on:click={muteUnmuteVideo}
             >
                 <svg

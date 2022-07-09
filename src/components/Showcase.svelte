@@ -45,10 +45,11 @@
 </script>
 
 <div class="container">
-    <ul class="showcase">
+    <ul class="showcase" aria-label="our staff">
         <li
             class="showcase--items"
             class:on-click={clicked.one}
+            aria-label={clicked.one ? 'close description' : 'expand description'}
             on:click={() => {
                 clearClicks(1);
                 clicked.one = !clicked.one;
@@ -56,7 +57,7 @@
         >
             <div class="wrap start" style="background-image: url({$images.people.person1})">
                 <h4>{$_('about.team.person1.name')}</h4>
-                <p class:hidden={!clicked.one}>
+                <p class:hidden={!clicked.one} aria-label="description">
                     {$_('about.team.person1.description')}
                 </p>
             </div>
@@ -64,6 +65,7 @@
         <li
             class="showcase--items"
             class:on-click={clicked.two}
+            aria-label={clicked.two ? 'close description' : 'expand description'}
             on:click={() => {
                 clearClicks(2);
                 clicked.two = !clicked.two;
@@ -71,7 +73,7 @@
         >
             <div class="wrap" style="background-image: url({$images.people.person2})">
                 <h4>{$_('about.team.person2.name')}</h4>
-                <p class:hidden={!clicked.two}>
+                <p class:hidden={!clicked.two} aria-label="description">
                     {$_('about.team.person2.description')}
                 </p>
             </div>
@@ -79,6 +81,7 @@
         <li
             class="showcase--items"
             class:on-click={clicked.three}
+            aria-label={clicked.three ? 'close description' : 'expand description'}
             on:click={() => {
                 clearClicks(3);
                 clicked.three = !clicked.three;
@@ -86,7 +89,7 @@
         >
             <div class="wrap" style="background-image: url({$images.people.person3})">
                 <h4>{$_('about.team.person3.name')}</h4>
-                <p class:hidden={!clicked.three}>
+                <p class:hidden={!clicked.three} aria-label="description">
                     {$_('about.team.person3.description')}
                 </p>
             </div>
@@ -94,6 +97,7 @@
         <li
             class="showcase--items"
             class:on-click={clicked.four}
+            aria-label={clicked.four ? 'close description' : 'expand description'}
             on:click={() => {
                 clearClicks(4);
                 clicked.four = !clicked.four;
@@ -101,7 +105,7 @@
         >
             <div class="wrap" style="background-image: url({$images.people.person4})">
                 <h4>{$_('about.team.person4.name')}</h4>
-                <p class:hidden={!clicked.four}>
+                <p class:hidden={!clicked.four} aria-label="description">
                     {$_('about.team.person4.description')}
                 </p>
             </div>
@@ -109,6 +113,7 @@
         <li
             class="showcase--items"
             class:on-click={clicked.five}
+            aria-label={clicked.five ? 'close description' : 'expand description'}
             on:click={() => {
                 clearClicks(5);
                 clicked.five = !clicked.five;
@@ -116,7 +121,7 @@
         >
             <div class="wrap end" style="background-image: url({$images.people.person5})">
                 <h4>{$_('about.team.person5.name')}</h4>
-                <p class:hidden={!clicked.five}>
+                <p class:hidden={!clicked.five} aria-label="description">
                     {$_('about.team.person5.description')}
                 </p>
             </div>

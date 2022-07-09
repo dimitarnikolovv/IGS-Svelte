@@ -38,9 +38,13 @@
         </div>
 
         {#if !$isInForm}
-            <ul class="socials">
+            <ul class="socials" aria-label="Social media links">
                 <li class="socials--link">
-                    <a href="a">
+                    <a
+                        href="https://www.facebook.com/igsproduction.dom.produkcyjny/"
+                        target="blank"
+                        aria-label="facebook"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48"
@@ -54,8 +58,12 @@
                     </a>
                 </li>
                 <li class="socials--link">
-                    <a href="a"
-                        ><svg
+                    <a
+                        href="https://www.instagram.com/igsproduction/"
+                        target="blank"
+                        aria-label="instagram"
+                    >
+                        <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48"
                             width="36px"
@@ -68,7 +76,7 @@
                     </a>
                 </li>
                 <li class="socials--link">
-                    <a href="a">
+                    <a href="a" target="blank" aria-label="linkedin">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48"
@@ -82,7 +90,7 @@
                     </a>
                 </li>
                 <li class="socials--link">
-                    <a href="a">
+                    <a href="a" target="blank" aria-label="behance">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 48 48"

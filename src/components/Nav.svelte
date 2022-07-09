@@ -25,18 +25,13 @@
                         $menuDark = false;
                     }}
                 >
-                    <a class="nav-a" href="/#/" aria-label="Navigation element" on:click={navClick}>
+                    <a class="nav-a" href="/#/" aria-label="Home" on:click={navClick}>
                         <p class="nav-title">{$_('navigation.home.title')}</p>
                         <p class="nav-sub-title">{$_('navigation.home.sub-title')}</p></a
                     >
                 </li>
                 <li class="nav-link">
-                    <a
-                        class="nav-a"
-                        href="/#/about"
-                        aria-label="Navigation element"
-                        on:click={navClick}
-                    >
+                    <a class="nav-a" href="/#/about" aria-label="About" on:click={navClick}>
                         <p class="nav-title">{$_('navigation.about.title')}</p>
                         <p class="nav-sub-title">{$_('navigation.about.sub-title')}</p></a
                     >
@@ -45,19 +40,14 @@
                     <a
                         class="nav-a"
                         href="/#/realisations"
-                        aria-label="Navigation element"
+                        aria-label="Our realisations"
                         on:click={navClick}
                         ><p class="nav-title">{$_('navigation.realisations.title')}</p>
                         <p class="nav-sub-title">{$_('navigation.realisations.sub-title')}</p></a
                     >
                 </li>
                 <li class="nav-link">
-                    <a
-                        class="nav-a"
-                        href="/#/contact"
-                        aria-label="Navigation element"
-                        on:click={navClick}
-                    >
+                    <a class="nav-a" href="/#/contact" aria-label="Contact us" on:click={navClick}>
                         <p class="nav-title">{$_('navigation.contact.title')}</p>
                         <p class="nav-sub-title">{$_('navigation.contact.sub-title')}</p></a
                     >
